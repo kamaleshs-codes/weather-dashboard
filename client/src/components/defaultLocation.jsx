@@ -56,7 +56,7 @@ export const DefaultLocation = () => {
           Choose the default location used for weather information.
         </p>
       </div>
-      <div className='bg-secondary text-text-main rounded-lg px-6'>
+      <div className='bg-secondary text-main rounded-lg px-6'>
         <div className='flex items-center justify-between py-4'>
           <div>
             <h4 className='font-medium'>Default Location</h4>
@@ -97,13 +97,13 @@ export const DefaultLocation = () => {
                     onClick={() => handleLocationSelect(location)}
                     className={`w-full text-left px-4 py-3 transition-colors ${
                       index === 0
-                        ? "bg-secondary text-text-main"
+                        ? "bg-secondary text-main"
                         : "bg-primary text-text-muted hover:text-secondary hover:bg-accent"
                     }`}>
                     <p className='font-semibold'>{location.name}</p>
                     <p
                       className={`text-sm ${
-                        index === 0 ? "text-text-main" : "text-text-secondary"
+                        index === 0 ? "text-main" : "text-text-secondary"
                       }`}>
                       {location.state && `${location.state}, `}
                       {location.country}

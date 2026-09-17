@@ -18,9 +18,9 @@ const DashboardHeader = ({ onSearch, weatherAlerts }) => {
           <DashboardSearch onSearch={onSearch} />
         </PageHeader>
       </div>
-      <div className='flex items-center justify-center gap-2 bg-secondary text-text-main cursor-pointer hover:bg-accent hover:text-secondary w-30 p-3 border-b-2 border-border-muted border-l-2'>
+      <div className='flex items-center justify-center gap-2 bg-secondary text-main cursor-pointer hover:bg-accent hover:text-secondary w-30 p-3 border-b-2 border-border-muted border-l-2'>
         <p className='font-semibold'>Login</p>
-        <LuLogIn className="text-xl"/>
+        <LuLogIn className='text-xl' />
       </div>
     </div>
   );

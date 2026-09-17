@@ -8,15 +8,16 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #c9d5da;
+  --primary: #d6d7d7;
   --secondary: #00203b;
-  --main: #eefffe;
-  --accent: #00ddfa;
+  --main: #f1fffe;
+  --accent: #00e1ff;
   --accent-secondary: #1500ff;
-  --text-main: #e6eaed;
   --text-muted: #00053e;
   --text-light: #8ea0a0;
   --text-light-secondary: #4f5152;
+  --text-heading: #006476;
+  --text-title: #18fac1;
 
   --hero-start: #ccdee0;
   --hero-mid: #c3ecff;
@@ -71,10 +72,11 @@
   --color-main: var(--main);
   --color-accent: var(--accent);
   --color-accent-secondary: var(--accent-secondary);
-  --color-text-main: var(--text-main);
   --color-text-accent: var(--accent);
   --color-text-light: var(--text-light);
   --color-text-light-secondary: var(--text-light-secondary);
+  --color-text-heading: var(--text-heading);
+  --color-text-title: var(--text-title);
 
   --color-hero-start: var(--hero-start);
   --color-hero-mid: var(--hero-mid);

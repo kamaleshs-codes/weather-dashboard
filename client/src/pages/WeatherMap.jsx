@@ -70,7 +70,7 @@ export const WeatherMap = () => {
                     onClick={() => setActiveLayer("none")}
                     className={`rounded-lg px-3 py-2 text-left text-sm font-semibold ${
                       activeLayer === "none"
-                        ? "bg-secondary text-text-main"
+                        ? "bg-secondary text-main"
                         : "text-secondary hover:bg-accent"
                     }`}>
                     🗺️ Base Map
@@ -79,7 +79,7 @@ export const WeatherMap = () => {
                     onClick={() => setActiveLayer("temperature")}
                     className={`rounded-lg px-3 py-2 text-left text-sm font-semibold ${
                       activeLayer === "temperature"
-                        ? "bg-secondary text-text-main"
+                        ? "bg-secondary text-main"
                         : "text-secondary hover:bg-accent"
                     }`}>
                     🌡️ Temperature
@@ -88,7 +88,7 @@ export const WeatherMap = () => {
                     onClick={() => setActiveLayer("precipitation")}
                     className={`rounded-lg px-3 py-2 text-left text-sm font-semibold ${
                       activeLayer === "precipitation"
-                        ? "bg-secondary text-text-main"
+                        ? "bg-secondary text-main"
                         : "text-secondary hover:bg-accent"
                     }`}>
                     🌧️ Precipitation
@@ -97,7 +97,7 @@ export const WeatherMap = () => {
                     onClick={() => setActiveLayer("clouds")}
                     className={`rounded-lg px-3 py-2 text-left text-sm font-semibold ${
                       activeLayer === "clouds"
-                        ? "bg-secondary text-text-main"
+                        ? "bg-secondary text-main"
                         : "text-secondary hover:bg-accent"
                     }`}>
                     ☁️ Clouds
@@ -106,7 +106,7 @@ export const WeatherMap = () => {
                     onClick={() => setActiveLayer("wind")}
                     className={`rounded-lg px-3 py-2 text-left text-sm font-semibold ${
                       activeLayer === "wind"
-                        ? "bg-secondary text-text-main"
+                        ? "bg-secondary text-main"
                         : "text-secondary hover:bg-accent"
                     }`}>
                     💨 Wind

@@ -5,7 +5,7 @@ export const DailySummary = ({ summary }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='relative mt-4 w-full flex flex-col justify-around px-5 py-3 bg-secondary text-text-main border-2 border-border-muted rounded-lg shadow-subtle'>
+    <div className='relative mt-4 w-full flex flex-col justify-around px-5 py-3 bg-secondary text-main border-2 border-border-muted rounded-lg shadow-subtle'>
       <div className='flex items-center gap-3'>
         <div className='flex gap-1 flex-1'>
           <LuCloudSun className='text-xl text-yellow-400' />

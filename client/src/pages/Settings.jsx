@@ -35,7 +35,7 @@ export const Settings = () => {
               Customize how weather information is displayed.
             </p>
           </div>
-          <div className='bg-secondary text-text-main rounded-lg px-6'>
+          <div className='bg-secondary text-main rounded-lg px-6'>
             <div className='flex items-center justify-between border-b border-border-muted py-4'>
               <div>
                 <h4 className='font-medium'>Temperature Unit</h4>
@@ -80,7 +80,7 @@ export const Settings = () => {
               Customize your default weather map view.
             </p>
           </div>
-          <div className='bg-secondary text-text-main rounded-lg px-6'>
+          <div className='bg-secondary text-main rounded-lg px-6'>
             <div className='flex items-center justify-between py-4'>
               <div>
                 <h4 className='font-medium'>Default Map Layer</h4>
@@ -112,7 +112,7 @@ export const Settings = () => {
               Customize the visual appearance of the dashboard.
             </p>
           </div>
-          <div className='bg-secondary text-text-main rounded-lg px-6'>
+          <div className='bg-secondary text-main rounded-lg px-6'>
             <div className='flex items-center justify-between py-4'>
               <div>
                 <h4 className='font-medium'>Theme</h4>
@@ -138,7 +138,7 @@ export const Settings = () => {
               Manage weather notifications and automatic updates.
             </p>
           </div>
-          <div className='bg-secondary text-text-main rounded-lg px-6'>
+          <div className='bg-secondary text-main rounded-lg px-6'>
             <div className='flex items-center justify-between border-b border-border-muted py-4'>
               <div>
                 <h4 className='font-medium'>Weather Alerts</h4>

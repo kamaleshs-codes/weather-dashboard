@@ -4,7 +4,7 @@ import { LuCloudSunRain, LuLayoutDashboard, LuMap, LuSettings } from "react-icon
 
 const Sidebar = () => {
   return (
-    <aside className='sticky top-0 h-screen w-1/7 flex flex-col items-center bg-secondary text-text-main border-r-2 border-border'>
+    <aside className='sticky top-0 h-screen w-1/7 flex flex-col items-center bg-secondary text-main border-r-2 border-border'>
         <img
           src={weatherImg}
           alt='Weather Dashboard'

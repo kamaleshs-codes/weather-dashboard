@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Mail, Send, MessageSquare } from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { HeaderBadge } from "../components/ui/HeaderBadge";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,27 @@ export const Contact = () => {
     subject: "",
     message: "",
   });
+
+  const contactLinks = [
+    {
+      label: "Email",
+      value: "skamalesh0204@outlook.com",
+      href: "mailto:skamalesh0204@outlook.com",
+      icon: Mail,
+    },
+    {
+      label: "LinkedIn",
+      value: "Connect on LinkedIn",
+      href: "https://linkedin.com/in/kamalesh-s2004",
+      icon: FaLinkedin,
+    },
+    {
+      label: "GitHub",
+      value: "View my projects",
+      href: "https://github.com/kamaleshs-codes",
+      icon: FaGithub,
+    },
+  ];
 
   const [submitted, setSubmitted] = useState(false);
 
@@ -39,22 +61,19 @@ export const Contact = () => {
   };
 
   return (
-    <main className='min-h-screen bg-main text-text-main'>
-      {/* ================= CONTACT HERO ================= */}
-      <section className='px-6 py-16 sm:px-10 lg:px-16'>
+    <main className='min-h-screen bg-main text-main'>
+      <section className='px-6 py-16 sm:px-10 lg:p-16'>
         <div className='mx-auto max-w-7xl'>
-          <div className='rounded-3xl border border-border-muted bg-gradient-to-br from-hero-start via-hero-mid to-hero-end p-8 shadow-subtle sm:p-12 lg:p-16'>
+          <HeaderBadge
+            icon={MessageSquare}
+            header="LET'S CONNECT & TALK WEATHER"
+          />
+          <div className='rounded-3xl mt-4 border border-border-muted bg-gradient-to-br from-hero-start via-hero-mid to-hero-end p-8 shadow-subtle sm:p-12 lg:p-16'>
             <div className='max-w-3xl'>
-              <div className='mb-6 inline-flex items-center gap-2 rounded-xl border border-border-muted bg-secondary px-5 py-3 font-semibold text-text-main shadow-subtle'>
-                <MessageSquare size={21} className='text-accent' />
-                <span className='text-accent'>Contact</span>
-              </div>
-
               <h1 className='text-4xl font-bold leading-tight text-accent-secondary sm:text-5xl lg:text-6xl'>
                 Let's
-                <span className='text-accent'> connect.</span>
+                <span className='text-text-heading'> connect.</span>
               </h1>
-
               <p className='mt-6 max-w-2xl text-base leading-7 text-secondary dark:text-text-muted sm:text-lg'>
                 Have a question about Weatherly, want to discuss the project, or
                 simply want to connect? Feel free to reach out.
@@ -64,92 +83,57 @@ export const Contact = () => {
         </div>
       </section>
 
-      {/* ================= CONTACT CONTENT ================= */}
       <section className='px-6 py-12 sm:px-10 lg:px-16'>
         <div className='mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr]'>
-          {/* Contact Information */}
           <div>
-            <span className='text-sm font-semibold uppercase tracking-wider text-text-muted'>
+            <span className='text-sm font-semibold uppercase tracking-wider text-text-heading'>
               Get in touch
             </span>
-
             <h2 className='mt-3 text-3xl font-bold text-accent-secondary sm:text-4xl'>
               Connect with me
             </h2>
-
             <p className='mt-5 max-w-lg leading-7 text-text-light-secondary'>
               Whether you have feedback, suggestions, or would like to discuss
               development opportunities, you can reach me through the following
               platforms.
             </p>
-
             <div className='mt-8 space-y-4'>
-              {/* Email */}
-              <a
-                href='mailto:your-email@example.com'
-                className='flex items-center gap-4 rounded-xl border border-border-muted bg-secondary p-5 shadow-subtle transition hover:border-accent'>
-                <div className='flex h-11 w-11 items-center justify-center rounded-lg bg-accent-secondary'>
-                  <Mail size={22} className='text-main' />
-                </div>
+              {contactLinks.map((item) => {
+                const Icon = item.icon;
 
-                <div>
-                  <p className='text-sm text-text-light'>Email</p>
-                  <p className='mt-1 font-semibold text-text-main'>
-                    skamalesh0204@outlook.com
-                  </p>
-                </div>
-              </a>
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target={item.label !== "Email" ? "_blank" : undefined}
+                    rel={item.label !== "Email" ? "noreferrer" : undefined}
+                    className='flex items-center gap-4 rounded-xl border border-border-muted bg-primary p-5 shadow-subtle transition hover:border-accent'>
+                    <div className='flex h-11 w-11 items-center justify-center rounded-lg bg-secondary'>
+                      <Icon size={22} className='text-accent' />
+                    </div>
 
-              {/* LinkedIn */}
-              <a
-                href='https://linkedin.com/in/kamalesh-s2004'
-                target='_blank'
-                rel='noreferrer'
-                className='flex items-center gap-4 rounded-xl border border-border-muted bg-secondary p-5 shadow-subtle transition hover:border-accent'>
-                <div className='flex h-11 w-11 items-center justify-center rounded-lg bg-accent-secondary'>
-                  <FaLinkedin size={22} className='text-main' />
-                </div>
+                    <div>
+                      <p className='text-sm text-accent-secondary'>
+                        {item.label}
+                      </p>
 
-                <div>
-                  <p className='text-sm text-text-light'>LinkedIn</p>
-                  <p className='mt-1 font-semibold text-text-main'>
-                    Connect on LinkedIn
-                  </p>
-                </div>
-              </a>
-
-              {/* GitHub */}
-              <a
-                href='https://github.com/kamaleshs-codes'
-                target='_blank'
-                rel='noreferrer'
-                className='flex items-center gap-4 rounded-xl border border-border-muted bg-secondary p-5 shadow-subtle transition hover:border-accent'>
-                <div className='flex h-11 w-11 items-center justify-center rounded-lg bg-accent-secondary'>
-                  <FaGithub size={22} className='text-main' />
-                </div>
-
-                <div>
-                  <p className='text-sm text-text-light'>GitHub</p>
-                  <p className='mt-1 font-semibold text-text-main'>
-                    View my projects
-                  </p>
-                </div>
-              </a>
+                      <p className='mt-1 font-semibold text-text-heading'>
+                        {item.value}
+                      </p>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           </div>
 
-          {/* ================= CONTACT FORM ================= */}
           <div className='rounded-2xl border border-border-muted bg-secondary p-6 shadow-subtle sm:p-8'>
             <div>
-              <h2 className='text-2xl font-bold text-text-main'>
-                Send a message
-              </h2>
-
+              <h2 className='text-2xl font-bold text-main'>Send a message</h2>
               <p className='mt-2 text-sm leading-6 text-text-light'>
                 Fill in the form below to share your message.
               </p>
             </div>
-
             <form
               onSubmit={handleSubmit}
               className='mt-7 space-y-5 text-text-muted'>
@@ -157,7 +141,7 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor='name'
-                  className='mb-2 block text-sm font-semibold text-text-main'>
+                  className='mb-2 block text-sm font-semibold text-main'>
                   Name
                 </label>
 
@@ -177,7 +161,7 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor='email'
-                  className='mb-2 block text-sm font-semibold text-text-main'>
+                  className='mb-2 block text-sm font-semibold text-main'>
                   Email
                 </label>
 
@@ -197,7 +181,7 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor='subject'
-                  className='mb-2 block text-sm font-semibold text-text-main'>
+                  className='mb-2 block text-sm font-semibold text-main'>
                   Subject
                 </label>
 
@@ -217,7 +201,7 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor='message'
-                  className='mb-2 block text-sm font-semibold text-text-main'>
+                  className='mb-2 block text-sm font-semibold text-main'>
                   Message
                 </label>
 

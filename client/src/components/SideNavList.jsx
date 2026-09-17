@@ -9,7 +9,7 @@ export const SideNavList = ({ children, to, icon: Icon, className = "" }) => {
         className={({ isActive }) =>
           `block py-4 border-b border-border-muted ${className} ${
             isActive
-              ? "bg-secondary text-text-main"
+              ? "bg-secondary text-main"
               : "bg-primary text-text-muted hover:text-secondary hover:bg-accent"
             }`
         }>
