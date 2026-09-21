@@ -12,6 +12,7 @@ import { useRefresh } from "../context/RefreshContext";
 export const Forecast = () => {
   const [forecast, setForecast] = useState([]);
   const [hourlyForecast, setHourlyForecast] = useState([]);
+  const [forecastUpdatedAt, setForecastUpdatedAt] = useState(null);
   const { location } = useLocation();
   const { refreshKey, refreshStatus } = useRefresh();
 
@@ -19,6 +20,7 @@ export const Forecast = () => {
     const fetchForecast = async () => {
       try {
         const data = await getForecast(location.lat, location.lon);
+        setForecastUpdatedAt(data.list?.[0]?.dt);
         const processedData = processForecastData(data);
         setForecast(processedData);
         const processedHourlyData = processHourlyForecastData(data);
@@ -54,7 +56,19 @@ export const Forecast = () => {
             </div>
           </div>
           <div>
-            <p>Udpated - 28 Aug 2026, 12:20 PM</p>
+            <p>
+              Updated -{" "}
+              {forecastUpdatedAt
+                ? new Date(forecastUpdatedAt * 1000).toLocaleString("en-IN", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                  })
+                : "Loading..."}
+            </p>
           </div>
         </div>
         <DayForecastCard forecast={forecast} />

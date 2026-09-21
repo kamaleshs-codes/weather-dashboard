@@ -1,15 +1,16 @@
+import { motion } from "framer-motion";
 import { SideNavList } from "./SideNavList";
 import weatherImg from "../assets/weather_imgheader.png";
-import { LuCloudSunRain, LuLayoutDashboard, LuMap, LuSettings } from "react-icons/lu";
+import {
+  LuCloudSunRain,
+  LuLayoutDashboard,
+  LuMap,
+  LuSettings,
+} from "react-icons/lu";
 
 const Sidebar = () => {
   return (
-    <aside className='sticky top-0 h-screen w-1/7 flex flex-col items-center bg-secondary text-main border-r-2 border-border'>
-        <img
-          src={weatherImg}
-          alt='Weather Dashboard'
-          className='w-full h-52 object-cover object-top'
-        />
+    <aside className='h-screen w-full flex flex-col items-center bg-secondary text-main border-r-2 border-border-muted'>
       <nav className='w-full text-center bg-secondary'>
         <ul className='flex flex-col bg-primary text-text-muted text-xl font-semibold'>
           <SideNavList to='/dashboard' icon={LuLayoutDashboard}>
@@ -18,7 +19,7 @@ const Sidebar = () => {
           <SideNavList to='/forecast' icon={LuCloudSunRain}>
             Forecast
           </SideNavList>
-          <SideNavList to='/weathermap' icon={LuMap} className="text-lg">
+          <SideNavList to='/weathermap' icon={LuMap} className='text-lg'>
             Weather Map
           </SideNavList>
           <SideNavList to='/settings' icon={LuSettings}>
@@ -26,6 +27,11 @@ const Sidebar = () => {
           </SideNavList>
         </ul>
       </nav>
+      <img
+        src={weatherImg}
+        alt='Weather Dashboard'
+        className='w-full h-full object-cover object-top'
+      />
     </aside>
   );
 };

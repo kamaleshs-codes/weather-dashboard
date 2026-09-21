@@ -7,7 +7,7 @@ import dailySummaryImg from "../assets/heroImages/dailySummary.png";
 import { HeaderBadge } from "../components/ui/HeaderBadge";
 import { FeaturesSection } from "../components/Home/FeatureSection";
 
-export const Home = () => {
+export const Home = ({ sidebarOpen }) => {
   const exploreLinks = [
     {
       title: "Dashboard",
@@ -148,7 +148,12 @@ export const Home = () => {
           </div>
           <div className='relative w-full'>
             <div className='pointer-events-none absolute left-1/2 top-1/2 w-3/4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent opacity-15 blur-3xl' />
-            <div className='relative w-full h-[35rem] overflow-hidden rounded-3xl border border-border bg-primary p-4 hover:border hover:border-border-muted hover:shadow-subtle transition duration-300 ease-in-out'>
+            <div
+              className={`relative w-full ${
+                sidebarOpen ? "h-[34.5rem]" : "h-[41rem]"
+              } overflow-hidden rounded-3xl border border-border bg-primary p-4
+transition-all duration-300 ease-in-out
+hover:border-border-muted hover:shadow-subtle`}>
               <div className='hero-image-track'>
                 <div className='hero-image-card'>
                   <img

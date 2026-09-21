@@ -127,7 +127,7 @@
 .hero-image-card {
   flex: 0 0 100%;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
   overflow: hidden;
   border-radius: 1.25rem;
   background: var(--primary);
@@ -143,7 +143,7 @@
 
 .hero-image-track {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 2rem;
   animation: hero-image-scroll 26s ease-in-out infinite;
 }
@@ -151,22 +151,26 @@
 @keyframes hero-image-scroll {
   0%,
   18% {
-    transform: translateY(0);
+    transform: translateX(0);
   }
+
   23%,
   41% {
-    transform: translateY(calc(-20% - 0.4rem));
+    transform: translateX(calc(-100% - 2rem));
   }
+
   46%,
   64% {
-    transform: translateY(calc(-40% - 0.8rem));
+    transform: translateX(calc(-200% - 4rem));
   }
+
   69%,
   87% {
-    transform: translateY(calc(-60% - 1.2rem));
+    transform: translateX(calc(-300% - 6rem));
   }
+
   92%,
   100% {
-    transform: translateY(calc(-80% - 1.6rem));
+    transform: translateX(calc(-400% - 8rem));
   }
 }
