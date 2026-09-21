@@ -1,50 +1,13 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import {
-  CloudSun,
-  CalendarDays,
-  Map,
-  Wind,
-  ArrowRight,
-  MapPin,
-  CloudSunRain,
-  CloudAlert,
-  CloudIcon,
-} from "lucide-react";
+import { ArrowRight, CloudIcon } from "lucide-react";
 import weatherContentImg from "../assets/heroImages/WeatherContents.png";
 import weatherMapImg from "../assets/heroImages/weatherMap.png";
 import weatherAlertImg from "../assets/heroImages/weatherAlerts.png";
 import dailySummaryImg from "../assets/heroImages/dailySummary.png";
 import { HeaderBadge } from "../components/ui/HeaderBadge";
+import { FeaturesSection } from "../components/Home/FeatureSection";
 
 export const Home = () => {
-  const features = [
-    {
-      title: "Current Weather",
-      description:
-        "View temperature, humidity, wind, pressure, visibility, sunrise, sunset, and other current conditions.",
-      icon: CloudSun,
-    },
-    {
-      title: "Weather Forecast",
-      description:
-        "Check upcoming weather conditions and plan your day with useful forecast information.",
-      icon: CalendarDays,
-    },
-    {
-      title: "Interactive Map",
-      description:
-        "Explore weather conditions geographically using an interactive weather map.",
-      icon: Map,
-    },
-    {
-      title: "Air Quality",
-      description:
-        "Monitor air-quality information alongside your current weather conditions.",
-      icon: Wind,
-    },
-  ];
-
   const exploreLinks = [
     {
       title: "Dashboard",
@@ -94,7 +57,9 @@ export const Home = () => {
               icon={CloudIcon}
               header='YOUR PERSONAL WEATHER COMPANION'
             />
-            <div className='relative mt-3 w-full overflow-hidden rounded-[2.5rem_1.5rem_3rem_1.5rem] border border-border-muted bg-gradient-to-br from-hero-start via-hero-mid to-hero-end px-7 py-10 shadow-subtle sm:px-10 sm:py-12'>
+            <div
+              id='hero-context'
+              className='relative mt-3 w-full overflow-hidden rounded-[2.5rem_1.5rem_3rem_1.5rem] bg-gradient-to-br from-hero-start via-hero-mid to-hero-end px-7 py-10 hover:shadow-subtle sm:px-10 sm:py-12 border border-border hover:border hover:border-border-muted transition-all duration-300 ease-in-out'>
               <div
                 className='
           pointer-events-none
@@ -183,7 +148,7 @@ export const Home = () => {
           </div>
           <div className='relative w-full'>
             <div className='pointer-events-none absolute left-1/2 top-1/2 w-3/4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent opacity-15 blur-3xl' />
-            <div className='relative w-full h-[35rem] overflow-hidden rounded-3xl border border-border-muted bg-primary p-4 shadow-subtle'>
+            <div className='relative w-full h-[35rem] overflow-hidden rounded-3xl border border-border bg-primary p-4 hover:border hover:border-border-muted hover:shadow-subtle transition duration-300 ease-in-out'>
               <div className='hero-image-track'>
                 <div className='hero-image-card'>
                   <img
@@ -212,42 +177,7 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className='border-y border-border bg-secondary px-8 py-16 lg:px-16'>
-        <div className='mx-auto max-w-7xl'>
-          <div className='mx-auto max-w-2xl text-center'>
-            <p className='text-md font-semibold uppercase tracking-wider text-text-title'>
-              Features
-            </p>
-            <h2 className='mt-2 text-3xl text-accent font-bold'>
-              Everything you need to understand the weather
-            </h2>
-            <p className='mt-4 text-text-light'>
-              Explore weather information through a simple and intuitive
-              interface.
-            </p>
-          </div>
-          <div className='mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
-            {features.map((feature) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={feature.title}
-                  className='rounded-xl border border-border-muted bg-primary p-6 shadow-subtle transition hover:-translate-y-1 hover:border-accent'>
-                  <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-secondary'>
-                    <Icon size={26} className='text-accent' />
-                  </div>
-                  <h3 className='mt-5 text-lg font-semibold text-accent-secondary'>
-                    {feature.title}
-                  </h3>
-                  <p className='mt-3 text-sm leading-6 font-semibold text-text-muted'>
-                    {feature.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <FeaturesSection />
 
       <section className='px-8 py-16 lg:px-16'>
         <div className='mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center'>
@@ -268,7 +198,7 @@ export const Home = () => {
             {projectHighlights.map((item) => (
               <div
                 key={item.title}
-                className='rounded-xl border border-border-muted bg-secondary p-5 shadow-subtle'>
+                className='rounded-xl border border-border-muted bg-secondary p-5 hover:shadow-subtle transition duration-300'>
                 <h3 className='font-semibold text-accent'>{item.title}</h3>
                 <p className='mt-2 text-sm text-text-light'>
                   {item.description}
@@ -284,17 +214,21 @@ export const Home = () => {
           <p className='text-sm font-semibold uppercase tracking-wider text-text-title'>
             Explore Weatherly
           </p>
-          <h2 className='mt-2 text-3xl font-bold text-accent'>Start exploring</h2>
+          <h2 className='mt-2 text-3xl font-bold text-accent'>
+            Start exploring
+          </h2>
           <div className='mt-10 grid gap-5 md:grid-cols-3'>
             {exploreLinks.map((item) => (
               <Link
                 key={item.title}
                 to={item.link}
-                className='group rounded-xl border border-border-muted bg-primary p-6 text-left shadow-subtle transition hover:border-accent'>
+                className='group rounded-xl border border-border-muted bg-primary p-6 text-left hover:shadow-drop transition duration-300 ease-in-out hover:border-border-muted'>
                 <h3 className='mt-5 text-xl font-semibold text-text-heading'>
                   {item.title}
                 </h3>
-                <p className='mt-2 text-sm text-text-muted'>{item.description}</p>
+                <p className='mt-2 text-sm text-text-muted'>
+                  {item.description}
+                </p>
                 <div className='mt-5 flex items-center gap-2 text-sm font-semibold text-accent-secondary'>
                   {item.action}
                   <ArrowRight

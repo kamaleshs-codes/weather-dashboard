@@ -24,16 +24,16 @@ export const Help = () => {
 
   const gettingStarted = [
     {
-      icon: MapPin,
-      title: "Choose a location",
-      description:
-        "Search for a location from the dashboard to load weather information for that area.",
-    },
-    {
       icon: LayoutDashboard,
       title: "Open the dashboard",
       description:
         "The dashboard brings the selected location and its weather information together in one place.",
+    },
+    {
+      icon: MapPin,
+      title: "Choose a location",
+      description:
+        "Search for a location from the dashboard to load weather information for that area.",
     },
     {
       icon: CloudSun,
@@ -43,7 +43,7 @@ export const Help = () => {
     },
   ];
 
-  const dashboardGuide = [
+  const MenuGuide = [
     {
       title: "Dashboard",
       description:
@@ -165,17 +165,17 @@ export const Help = () => {
         <div className='mx-auto max-w-7xl'>
           <div className='max-w-2xl'>
             <span className='text-sm font-semibold uppercase tracking-wider text-text-heading'>
-              Dashboard Guide
+              Menu bar
             </span>
             <h2 className='mt-3 text-3xl font-bold text-accent-secondary sm:text-4xl'>
-              Understanding the dashboard
+              Understanding the Menu Options
             </h2>
             <p className='mt-4 leading-7 text-text-light-secondary'>
               Each section of Weatherly has a specific purpose.
             </p>
           </div>
           <div className='mt-10 grid gap-5 sm:grid-cols-2'>
-            {dashboardGuide.map((item) => (
+            {MenuGuide.map((item) => (
               <div
                 key={item.title}
                 className='rounded-xl border border-border-muted bg-secondary p-6 shadow-subtle'>
