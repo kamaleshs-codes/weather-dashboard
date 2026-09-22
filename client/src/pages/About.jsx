@@ -127,15 +127,13 @@ export const About = () => {
             ].map((step) => (
               <div
                 key={step.number}
-                className='rounded-xl border border-border-muted bg-secondary p-6 shadow-subtle'>
+                className='h-full rounded-xl border border-border-muted bg-secondary p-6 shadow-subtle'>
                 <span className='rounded-full bg-main p-2 text-sm font-bold text-text-muted'>
                   {step.number}
                 </span>
-
                 <h3 className='mt-4 text-lg font-semibold text-text-title'>
                   {step.title}
                 </h3>
-
                 <p className='mt-3 text-sm leading-6 text-accent'>
                   {step.description}
                 </p>
@@ -184,7 +182,6 @@ export const About = () => {
               },
             ].map((technology) => {
               const Icon = technology.icon;
-
               return (
                 <div
                   key={technology.title}
@@ -192,11 +189,9 @@ export const About = () => {
                   <div className='flex h-11 w-11 items-center justify-center rounded-lg bg-secondary'>
                     <Icon size={23} className='text-accent' />
                   </div>
-
                   <h3 className='mt-4 font-semibold text-text-heading'>
                     {technology.title}
                   </h3>
-
                   <p className='mt-2 text-sm leading-6 font-semibold text-text-muted'>
                     {technology.description}
                   </p>
