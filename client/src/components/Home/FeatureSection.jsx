@@ -1,6 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { CloudSun, CalendarDays, Map, Wind } from "lucide-react";
+import { StaggerAnimation } from "../ui/StaggerAnimation";
 
 const features = [
   {
@@ -29,31 +29,7 @@ const features = [
   },
 ];
 
-const cardContainer = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.45,
-    },
-  },
-};
-
-const cardItem = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-export const FeaturesSection = () => {
+export const FeatureSection = () => {
   return (
     <section className='border-y border-border bg-secondary px-8 py-16 lg:px-16'>
       <div className='mx-auto max-w-7xl'>
@@ -69,32 +45,30 @@ export const FeaturesSection = () => {
             interface.
           </p>
         </div>
-        <motion.div
+        <StaggerAnimation
           className='mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4'
-          variants={cardContainer}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.2 }}>
+          itemClassName='h-fit'>
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
-              <motion.div
+              <div
                 key={feature.title}
-                variants={cardItem}
-                className='rounded-xl bg-primary p-6 hover:shadow-drop transition-all duration-300 hover:border-border-muted ease-in-out hover:translate-y-1'>
+                className='h-full rounded-xl bg-primary p-6 transition-all duration-300 ease-in-out hover:translate-y-1 hover:border-border-muted hover:shadow-drop'>
                 <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-secondary'>
                   <Icon size={26} className='text-accent' />
                 </div>
+
                 <h3 className='mt-5 text-lg font-semibold text-accent-secondary'>
                   {feature.title}
                 </h3>
+
                 <p className='mt-3 text-sm leading-6 font-semibold text-text-muted'>
                   {feature.description}
                 </p>
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </StaggerAnimation>
       </div>
     </section>
   );

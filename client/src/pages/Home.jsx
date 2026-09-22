@@ -5,7 +5,8 @@ import weatherMapImg from "../assets/heroImages/weatherMap.png";
 import weatherAlertImg from "../assets/heroImages/weatherAlerts.png";
 import dailySummaryImg from "../assets/heroImages/dailySummary.png";
 import { HeaderBadge } from "../components/ui/HeaderBadge";
-import { FeaturesSection } from "../components/Home/FeatureSection";
+import { FeatureSection } from "../components/Home/FeatureSection";
+import { FloatingCard } from "../components/ui/FloatingCard";
 
 export const Home = ({ sidebarOpen }) => {
   const exploreLinks = [
@@ -151,9 +152,7 @@ export const Home = ({ sidebarOpen }) => {
             <div
               className={`relative w-full ${
                 sidebarOpen ? "h-[34.5rem]" : "h-[41rem]"
-              } overflow-hidden rounded-3xl border border-border bg-primary p-4
-transition-all duration-300 ease-in-out
-hover:border-border-muted hover:shadow-subtle`}>
+              } overflow-hidden rounded-3xl border border-border bg-primary p-4 transition-all duration-300 ease-in-out hover:border-border-muted hover:shadow-subtle`}>
               <div className='hero-image-track'>
                 <div className='hero-image-card'>
                   <img
@@ -182,7 +181,7 @@ hover:border-border-muted hover:shadow-subtle`}>
         </div>
       </section>
 
-      <FeaturesSection />
+      <FeatureSection />
 
       <section className='px-8 py-16 lg:px-16'>
         <div className='mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center'>
@@ -200,15 +199,16 @@ hover:border-border-muted hover:shadow-subtle`}>
             </p>
           </div>
           <div className='grid gap-4 sm:grid-cols-3 lg:grid-cols-1'>
-            {projectHighlights.map((item) => (
-              <div
-                key={item.title}
-                className='rounded-xl border border-border-muted bg-secondary p-5 hover:shadow-subtle transition duration-300'>
-                <h3 className='font-semibold text-accent'>{item.title}</h3>
-                <p className='mt-2 text-sm text-text-light'>
-                  {item.description}
-                </p>
-              </div>
+            {projectHighlights.map((item, index) => (
+              <FloatingCard key={item.title} delay={index * 0.3}>
+                <div className='rounded-xl border border-border-muted bg-secondary p-5 transition duration-300 ease-in-out hover:shadow-subtle'>
+                  <h3 className='font-semibold text-accent'>{item.title}</h3>
+
+                  <p className='mt-2 text-sm text-text-light'>
+                    {item.description}
+                  </p>
+                </div>
+              </FloatingCard>
             ))}
           </div>
         </div>
