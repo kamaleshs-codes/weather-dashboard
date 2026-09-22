@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { searchLocations } from "../services/geocodingApi";
+import { searchLocations } from "../../services/geocodingApi";
 import { FiSearch } from "react-icons/fi";
 
 const DashboardSearch = ({ onSearch }) => {

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { SideNavList } from "./SideNavList";
-import weatherImg from "../assets/weather_imgheader.png";
+import  weatherImg  from "../../assets/weather_imgheader.png";
 import {
   LuCloudSunRain,
   LuLayoutDashboard,

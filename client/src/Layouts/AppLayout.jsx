@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import NavbarHeader from "../components/NavbarHeader";
-import Sidebar from "../components/Sidebar";
-import MainContent from "../components/MainContent";
-
+import  NavbarHeader  from "../components/Layout/NavbarHeader";
+import  Sidebar  from "../components/Layout/Sidebar";
+import  MainContent  from "../components/Layout/MainContent";
 const AppLayout = ({ location, setLocation }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 

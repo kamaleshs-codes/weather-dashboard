@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Mail, Send, MessageSquare } from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { HeaderBadge } from "../components/ui/HeaderBadge";
+import { FloatingCard } from "../components/ui/FloatingCard";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -98,30 +99,28 @@ export const Contact = () => {
               platforms.
             </p>
             <div className='mt-8 space-y-4'>
-              {contactLinks.map((item) => {
+              {contactLinks.map((item, index) => {
                 const Icon = item.icon;
-
                 return (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target={item.label !== "Email" ? "_blank" : undefined}
-                    rel={item.label !== "Email" ? "noreferrer" : undefined}
-                    className='flex items-center gap-4 rounded-xl border border-border-muted bg-primary p-5 shadow-subtle transition hover:border-accent'>
-                    <div className='flex h-11 w-11 items-center justify-center rounded-lg bg-secondary'>
-                      <Icon size={22} className='text-accent' />
-                    </div>
-
-                    <div>
-                      <p className='text-sm text-accent-secondary'>
-                        {item.label}
-                      </p>
-
-                      <p className='mt-1 font-semibold text-text-heading'>
-                        {item.value}
-                      </p>
-                    </div>
-                  </a>
+                  <FloatingCard key={item.label} delay={index * 0.3}>
+                    <a
+                      href={item.href}
+                      target={item.label !== "Email" ? "_blank" : undefined}
+                      rel={item.label !== "Email" ? "noreferrer" : undefined}
+                      className='flex items-center gap-4 rounded-xl border border-border-muted bg-primary p-5 hover:shadow-subtle transition hover:border-accent'>
+                      <div className='flex h-11 w-11 items-center justify-center rounded-lg bg-secondary'>
+                        <Icon size={22} className='text-accent' />
+                      </div>
+                      <div>
+                        <p className='text-sm text-accent-secondary'>
+                          {item.label}
+                        </p>
+                        <p className='mt-1 font-semibold text-text-heading'>
+                          {item.value}
+                        </p>
+                      </div>
+                    </a>
+                  </FloatingCard>
                 );
               })}
             </div>
@@ -137,14 +136,12 @@ export const Contact = () => {
             <form
               onSubmit={handleSubmit}
               className='mt-7 space-y-5 text-text-muted'>
-              {/* Name */}
               <div>
                 <label
                   htmlFor='name'
                   className='mb-2 block text-sm font-semibold text-main'>
                   Name
                 </label>
-
                 <input
                   id='name'
                   name='name'
@@ -156,15 +153,12 @@ export const Contact = () => {
                   className='w-full rounded-lg border border-border-muted bg-main px-4 py-3 text-sm outline-none transition placeholder:text-text-light-secondary focus:border-accent'
                 />
               </div>
-
-              {/* Email */}
               <div>
                 <label
                   htmlFor='email'
                   className='mb-2 block text-sm font-semibold text-main'>
                   Email
                 </label>
-
                 <input
                   id='email'
                   name='email'
@@ -176,15 +170,12 @@ export const Contact = () => {
                   className='w-full rounded-lg border border-border-muted bg-main px-4 py-3 text-sm outline-none transition placeholder:text-text-light-secondary focus:border-accent'
                 />
               </div>
-
-              {/* Subject */}
               <div>
                 <label
                   htmlFor='subject'
                   className='mb-2 block text-sm font-semibold text-main'>
                   Subject
                 </label>
-
                 <input
                   id='subject'
                   name='subject'
@@ -196,15 +187,12 @@ export const Contact = () => {
                   className='w-full rounded-lg border border-border-muted bg-main px-4 py-3 text-sm outline-none transition placeholder:text-text-light-secondary focus:border-accent'
                 />
               </div>
-
-              {/* Message */}
               <div>
                 <label
                   htmlFor='message'
                   className='mb-2 block text-sm font-semibold text-main'>
                   Message
                 </label>
-
                 <textarea
                   id='message'
                   name='message'
@@ -216,8 +204,6 @@ export const Contact = () => {
                   className='w-full resize-none rounded-lg border border-border-muted bg-main px-4 py-3 text-sm outline-none transition placeholder:text-text-light-secondary focus:border-accent'
                 />
               </div>
-
-              {/* Submit */}
               <button
                 type='submit'
                 className='inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 font-semibold text-secondary shadow-subtle transition hover:scale-[1.01] hover:bg-accent-secondary hover:text-main'>
@@ -225,8 +211,6 @@ export const Contact = () => {
                 <Send size={18} />
               </button>
             </form>
-
-            {/* Success message */}
             {submitted && (
               <div className='mt-5 rounded-lg border border-green-500/30 bg-green-500/10 px-4 py-3 text-sm font-medium text-green-500'>
                 Your message has been submitted successfully.

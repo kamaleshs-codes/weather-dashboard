@@ -1,14 +1,14 @@
 import React from "react";
-import { InnerCard } from "./ui/InnerCard";
+import { InnerCard } from "../ui/InnerCard";
 import { WiRaindrop, WiStrongWind } from "react-icons/wi";
-import { HourlyTimeFormat } from "../utils/HourlyTimeFormat";
-import { useSettings } from "../context/SettingsContext";
+import { HourlyTimeFormat } from "../../utils/HourlyTimeFormat";
+import { useSettings } from "../../context/SettingsContext";
 import {
   convertTemperature,
   convertWindSpeed,
   temperatureSymbol,
   windSpeedSymbol,
-} from "../utils/weathersettings";
+} from "../../utils/weathersettings";
 
 export const HourlyForecastCard = ({ hour }) => {
   const formattedTime = HourlyTimeFormat(hour.time);

@@ -11,7 +11,7 @@ export const FloatingCard = ({ children, delay = 0 }) => {
         duration: 2.8,
         delay,
         repeat: Infinity,
-        repeatDelay: 6.8,
+        repeatDelay: 4.8,
         ease: "easeInOut",
       }}>
       {children}

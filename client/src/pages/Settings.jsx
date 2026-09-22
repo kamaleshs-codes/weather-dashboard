@@ -1,8 +1,8 @@
 import React from "react";
 import { useSettings } from "../context/SettingsContext";
-import { PageHeader } from "../components/PageHeader";
+import { PageHeader } from "../components/Layout/PageHeader";
 import { Toggle } from "../components/ui/Toggle";
-import { DefaultLocation } from "../components/defaultLocation";
+import { DefaultLocation } from "../components/common/defaultLocation";
 
 export const Settings = () => {
   const { settings, updateSettings, saveSettings, saving, toast } =

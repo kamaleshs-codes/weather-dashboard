@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { getWeather } from "../services/weatherapi";
-import { WeatherCard } from "../components/WeatherCard";
-import { WeatherDetailsCard } from "../components/WeatherDetailsCard";
+import { WeatherCard } from "../components/Dashboard/WeatherCard";
+import { WeatherDetailsCard } from "../components/Dashboard/WeatherDetailsCard";
 import { getLocalDateTime } from "../utils/DateTimeFormat";
-import DashboardHeader from "../components/DashboardHeader";
+import DashboardHeader from "../components/Dashboard/DashboardHeader";
 import { getAirQuality } from "../services/airQualityApi";
 import { useLocation } from "../context/LocationContext";
 import { useRefresh } from "../context/RefreshContext";
-import { DailySummary } from "../components/DailySummary";
+import { DailySummary } from "../components/Dashboard/DailySummary";
 import { getDailySummary } from "../services/dailySummaryApi";
 import {
   getTodaySummary,

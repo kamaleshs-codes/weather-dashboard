@@ -7,6 +7,7 @@ import dailySummaryImg from "../assets/heroImages/dailySummary.png";
 import { HeaderBadge } from "../components/ui/HeaderBadge";
 import { FeatureSection } from "../components/Home/FeatureSection";
 import { FloatingCard } from "../components/ui/FloatingCard";
+import { StaggerAnimation } from "../components/ui/StaggerAnimation";
 
 export const Home = ({ sidebarOpen }) => {
   const exploreLinks = [
@@ -222,12 +223,12 @@ export const Home = ({ sidebarOpen }) => {
           <h2 className='mt-2 text-3xl font-bold text-accent'>
             Start exploring
           </h2>
-          <div className='mt-10 grid gap-5 md:grid-cols-3'>
+          <StaggerAnimation className='mt-10 grid gap-5 md:grid-cols-3'>
             {exploreLinks.map((item) => (
               <Link
                 key={item.title}
                 to={item.link}
-                className='group rounded-xl border border-border-muted bg-primary p-6 text-left hover:shadow-drop transition duration-300 ease-in-out hover:border-border-muted'>
+                className='group block rounded-xl border border-border-muted bg-primary p-6 text-left hover:shadow-drop transition duration-300 ease-in-out hover:border-border-muted'>
                 <h3 className='mt-5 text-xl font-semibold text-text-heading'>
                   {item.title}
                 </h3>
@@ -243,7 +244,7 @@ export const Home = ({ sidebarOpen }) => {
                 </div>
               </Link>
             ))}
-          </div>
+          </StaggerAnimation>
         </div>
       </section>
 

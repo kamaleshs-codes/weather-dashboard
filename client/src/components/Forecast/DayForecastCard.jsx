@@ -1,16 +1,16 @@
 import React from "react";
-import { Card } from "./ui/Card";
-import { InnerCard } from "./ui/InnerCard";
+import { Card } from "../ui/Card";
+import { InnerCard } from "../ui/InnerCard";
 import { WiRaindrop, WiStrongWind } from "react-icons/wi";
 import { FiChevronRight } from "react-icons/fi";
-import { forecastDayDateFormat } from "../utils/forecastDayDateFormat";
+import { forecastDayDateFormat } from "../../utils/forecastDayDateFormat";
 import {
   convertTemperature,
   convertWindSpeed,
   temperatureSymbol,
   windSpeedSymbol,
-} from "../utils/weathersettings";
-import { useSettings } from "../context/SettingsContext";
+} from "../../utils/weathersettings";
+import { useSettings } from "../../context/SettingsContext";
 
 export const DayForecastCard = ({ forecast }) => {
   const { settings } = useSettings();

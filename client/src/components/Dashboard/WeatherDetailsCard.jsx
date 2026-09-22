@@ -1,12 +1,12 @@
 import React from "react";
-import { Card } from "./ui/Card";
-import { InnerCard } from "./ui/InnerCard";
-import { getWindDirection } from "../utils/WindDirection";
-import { getAirQualityLevel } from "../utils/AQLevelConvert";
-import { dewPointCalculation } from "../utils/DewPoint";
-import { getVisibilityLevel } from "../utils/visibilityCondition";
-import { getCloudinessLevel } from "../utils/CloudCondition";
-import { getPressureLevel } from "../utils/PressureLevel";
+import { Card } from "../ui/Card";
+import { InnerCard } from "../ui/InnerCard";
+import { getWindDirection } from "../../utils/WindDirection";
+import { getAirQualityLevel } from "../../utils/AQLevelConvert";
+import { dewPointCalculation } from "../../utils/DewPoint";
+import { getVisibilityLevel } from "../../utils/visibilityCondition";
+import { getCloudinessLevel } from "../../utils/CloudCondition";
+import { getPressureLevel } from "../../utils/PressureLevel";
 import {
   WiCloudy,
   WiHumidity,
@@ -15,18 +15,17 @@ import {
 } from "react-icons/wi";
 import { FiEye } from "react-icons/fi";
 import { LuGauge, LuWind } from "react-icons/lu";
-import sunriseIcon from "../assets/weathersvg/sunrise.svg";
-import sunIcon from "../assets/weathersvg/sun.svg";
-import sunsetIcon from "../assets/weathersvg/sunset.svg";
-import { daylightSeconds } from "../utils/DayLightSeconds";
+import sunriseIcon from "../../assets/weathersvg/sunrise.svg";
+import sunsetIcon from "../../assets/weathersvg/sunset.svg";
+import { daylightSeconds } from "../../utils/DayLightSeconds";
 import {
   convertTemperature,
   convertWindSpeed,
   mpsToKmh,
   temperatureSymbol,
   windSpeedSymbol,
-} from "../utils/weathersettings";
-import { useSettings } from "../context/SettingsContext";
+} from "../../utils/weathersettings";
+import { useSettings } from "../../context/SettingsContext";
 
 export const WeatherDetailsCard = ({ weather, dateTime, airQuality }) => {
   const { settings } = useSettings();

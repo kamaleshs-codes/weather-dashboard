@@ -1,7 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export const StaggerAnimation = ({ children, className = "" }) => {
+export const StaggerAnimation = ({
+  children,
+  className = "",
+  itemClassName = "",
+}) => {
   const containerVariants = {
     hidden: {},
     visible: {
@@ -34,7 +38,7 @@ export const StaggerAnimation = ({ children, className = "" }) => {
       whileInView='visible'
       viewport={{ once: true, amount: 0.2 }}>
       {React.Children.map(children, (child) => (
-        <motion.div className='h-full' variants={itemVariants}>
+        <motion.div className={itemClassName} variants={itemVariants}>
           {child}
         </motion.div>
       ))}

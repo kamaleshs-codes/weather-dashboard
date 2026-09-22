@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import { useLocation } from "../context/LocationContext";
 import { Card } from "../components/ui/Card";
-import { PageHeader } from "../components/PageHeader";
+import { PageHeader } from "../components/Layout/PageHeader";
 import { useSettings } from "../context/SettingsContext";
 
 const MapUpdater = ({ position }) => {

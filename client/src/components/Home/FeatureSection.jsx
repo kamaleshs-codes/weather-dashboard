@@ -47,7 +47,7 @@ export const FeatureSection = () => {
         </div>
         <StaggerAnimation
           className='mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4'
-          itemClassName='h-fit'>
+          itemClassName='h-full'>
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
@@ -57,11 +57,9 @@ export const FeatureSection = () => {
                 <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-secondary'>
                   <Icon size={26} className='text-accent' />
                 </div>
-
                 <h3 className='mt-5 text-lg font-semibold text-accent-secondary'>
                   {feature.title}
                 </h3>
-
                 <p className='mt-3 text-sm leading-6 font-semibold text-text-muted'>
                   {feature.description}
                 </p>

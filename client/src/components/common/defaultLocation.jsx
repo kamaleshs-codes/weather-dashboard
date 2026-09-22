@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import { searchLocations } from "../services/geocodingApi";
-import { useSettings } from "../context/SettingsContext";
+import { searchLocations } from "../../services/geocodingApi";
+import { useSettings } from "../../context/SettingsContext";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from "../context/LocationContext";
+import { useLocation } from "../../context/LocationContext";
 
 export const DefaultLocation = () => {
   const { settings, updateSettings } = useSettings();

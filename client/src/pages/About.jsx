@@ -12,21 +12,22 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { HeaderBadge } from "../components/ui/HeaderBadge";
+import { StaggerAnimation } from "../components/ui/StaggerAnimation";
 
 export const About = () => {
   return (
     <main className='min-h-screen bg-main text-main'>
       <section className='px-6 py-16 sm:px-10 lg:p-16'>
         <div className='mx-auto max-w-7xl'>
-          <HeaderBadge
-            icon={Compass}
-            header='ABOUT THE WEATHERLY'
-          />
-          <div className='rounded-3xl mt-4 border border-border-muted bg-gradient-to-br from-hero-start via-hero-mid to-hero-end p-8 shadow-subtle sm:p-12 lg:p-16'>
+          <HeaderBadge icon={Compass} header='ABOUT THE WEATHERLY' />
+          <div className='rounded-3xl mt-4 border border-border hover:border hover:border-border-muted bg-gradient-to-br from-hero-start via-hero-mid to-hero-end p-8 hover:shadow-subtle transition duration-300 ease-in-out sm:p-12 lg:p-16'>
             <div className='max-w-3xl'>
               <h1 className='text-4xl font-bold leading-tight text-accent-secondary sm:text-5xl lg:text-6xl'>
                 Understanding the project
-                <span className='text-text-heading'> behind the dashboard.</span>
+                <span className='text-text-heading'>
+                  {" "}
+                  behind the dashboard.
+                </span>
               </h1>
               <p className='mt-6 max-w-2xl text-base leading-7 text-secondary dark:text-text-muted sm:text-lg'>
                 Weatherly is a modern weather dashboard built to explore
@@ -67,7 +68,7 @@ export const About = () => {
               through a clean, understandable, and responsive experience.
             </p>
           </div>
-          <div className='rounded-2xl border border-border-muted bg-accent-secondary p-7 shadow-subtle'>
+          <div className='rounded-2xl border border-border hover:border hover:border-border-muted bg-accent-secondary p-7 hover:shadow-subtle transition duration-300 ease-in-out'>
             <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-secondary'>
               <Layers3 size={25} className='text-main' />
             </div>
@@ -97,7 +98,7 @@ export const About = () => {
               application to turn external weather data into a usable dashboard.
             </p>
           </div>
-          <div className='mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
+          <StaggerAnimation className='mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
             {[
               {
                 number: "01",
@@ -127,18 +128,20 @@ export const About = () => {
               <div
                 key={step.number}
                 className='rounded-xl border border-border-muted bg-secondary p-6 shadow-subtle'>
-                <span className='text-sm font-bold text-text-muted p-2 rounded-full bg-main'>
+                <span className='rounded-full bg-main p-2 text-sm font-bold text-text-muted'>
                   {step.number}
                 </span>
+
                 <h3 className='mt-4 text-lg font-semibold text-text-title'>
                   {step.title}
                 </h3>
+
                 <p className='mt-3 text-sm leading-6 text-accent'>
                   {step.description}
                 </p>
               </div>
             ))}
-          </div>
+          </StaggerAnimation>
         </div>
       </section>
 
@@ -151,15 +154,13 @@ export const About = () => {
             <h2 className='mt-3 text-3xl font-bold text-accent-secondary sm:text-4xl'>
               What powers the project
             </h2>
-
             <p className='mx-auto mt-4 max-w-2xl leading-7 text-text-light-secondary'>
               The technology stack is intentionally built around practical
               web-development concepts that can be expanded as the project
               evolves.
             </p>
           </div>
-
-          <div className='mx-auto mt-10 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4'>
+          <StaggerAnimation className='mx-auto mt-10 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4'>
             {[
               {
                 icon: Code2,
@@ -183,6 +184,7 @@ export const About = () => {
               },
             ].map((technology) => {
               const Icon = technology.icon;
+
               return (
                 <div
                   key={technology.title}
@@ -195,13 +197,13 @@ export const About = () => {
                     {technology.title}
                   </h3>
 
-                  <p className='mt-2 text-sm leading-6 text-text-muted font-semibold'>
+                  <p className='mt-2 text-sm leading-6 font-semibold text-text-muted'>
                     {technology.description}
                   </p>
                 </div>
               );
             })}
-          </div>
+          </StaggerAnimation>
         </div>
       </section>
 

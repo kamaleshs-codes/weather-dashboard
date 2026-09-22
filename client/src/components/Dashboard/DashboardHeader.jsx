@@ -1,7 +1,7 @@
 import React from "react";
 import DashboardSearch from "./DashboardSearch";
-import { PageHeader } from "./PageHeader";
-import { useRefresh } from "../context/RefreshContext";
+import { PageHeader } from "../Layout/PageHeader";
+import { useRefresh } from "../../context/RefreshContext";
 import { LuLogIn } from "react-icons/lu";
 
 const DashboardHeader = ({ onSearch, weatherAlerts }) => {

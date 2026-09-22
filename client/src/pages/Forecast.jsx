@@ -1,10 +1,10 @@
-import { DayForecastCard } from "../components/DayForecastCard";
+import { DayForecastCard } from "../components/Forecast/DayForecastCard";
 import { FiMapPin } from "react-icons/fi";
 import React, { useEffect, useState } from "react";
 import { getForecast } from "../services/forecastApi";
 import { processForecastData } from "../utils/processForecastData";
-import { PageHeader } from "../components/PageHeader";
-import { HourlyForecast } from "../components/HourlyForecast";
+import { PageHeader } from "../components/Layout/PageHeader";
+import { HourlyForecast } from "../components/Forecast/HourlyForecast";
 import { processHourlyForecastData } from "../utils/processHourlyForecastData";
 import { useLocation } from "../context/LocationContext";
 import { useRefresh } from "../context/RefreshContext";

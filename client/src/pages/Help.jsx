@@ -14,14 +14,14 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { HeaderBadge } from "../components/ui/HeaderBadge";
+import { StaggerAnimation } from "../components/ui/StaggerAnimation";
+import { FloatingCard } from '../components/ui/FloatingCard';
 
 export const Help = () => {
   const [openFaq, setOpenFaq] = useState(null);
-
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
   };
-
   const gettingStarted = [
     {
       icon: LayoutDashboard,
@@ -42,7 +42,6 @@ export const Help = () => {
         "Use the dashboard sections to explore current conditions, forecasts, maps, and related information.",
     },
   ];
-
   const MenuGuide = [
     {
       title: "Dashboard",
@@ -65,7 +64,6 @@ export const Help = () => {
         "Customize units, theme, alerts, summaries, refresh behavior, and default location preferences.",
     },
   ];
-
   const faqs = [
     {
       question: "How do I change the weather location?",
@@ -133,31 +131,28 @@ export const Help = () => {
               location you are interested in.
             </p>
           </div>
-          <div className='mt-10 grid gap-6 md:grid-cols-3'>
-            {gettingStarted.map((step, index) => {
+          <StaggerAnimation className='mt-10 grid gap-6 md:grid-cols-3'>
+            {gettingStarted.map((step) => {
               const Icon = step.icon;
-
               return (
                 <div
                   key={step.title}
-                  className='rounded-xl border border-border-muted bg-accent-secondary p-6 shadow-subtle'>
+                  className='h-full rounded-xl border border-border-muted bg-accent-secondary p-6 shadow-subtle'>
                   <div className='flex items-center justify-between'>
                     <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-secondary'>
                       <Icon size={25} className='text-main' />
                     </div>
                   </div>
-
                   <h3 className='mt-5 text-lg font-semibold text-main'>
                     {step.title}
                   </h3>
-
-                  <p className='mt-3 text-sm leading-6 text-accent font-semibold'>
+                  <p className='mt-3 text-sm leading-6 font-semibold text-accent'>
                     {step.description}
                   </p>
                 </div>
               );
             })}
-          </div>
+          </StaggerAnimation>
         </div>
       </section>
 
@@ -175,18 +170,18 @@ export const Help = () => {
             </p>
           </div>
           <div className='mt-10 grid gap-5 sm:grid-cols-2'>
-            {MenuGuide.map((item) => (
-              <div
-                key={item.title}
-                className='rounded-xl border border-border-muted bg-secondary p-6 shadow-subtle'>
-                <div className='flex items-center gap-3'>
-                  <div className='h-2 w-2 rounded-full bg-accent' />
-                  <h3 className='font-semibold text-main'>{item.title}</h3>
+            {MenuGuide.map((item, index) => (
+              <FloatingCard key={item.title} delay={index * 0.3}>
+                <div className='rounded-xl border border-border-muted bg-secondary p-6 shadow-subtle'>
+                  <div className='flex items-center gap-3'>
+                    <div className='h-2 w-2 rounded-full bg-accent' />
+                    <h3 className='font-semibold text-main'>{item.title}</h3>
+                  </div>
+                  <p className='mt-3 pl-5 text-sm leading-6 text-text-light'>
+                    {item.description}
+                  </p>
                 </div>
-                <p className='mt-3 pl-5 text-sm leading-6 text-text-light'>
-                  {item.description}
-                </p>
-              </div>
+              </FloatingCard>
             ))}
           </div>
         </div>

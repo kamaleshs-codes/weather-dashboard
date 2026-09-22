@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "./ui/Card";
+import { Card } from "../ui/Card";
 import { FiChevronRight } from "react-icons/fi";
 import { HourlyForecastCard } from "./HourlyForecastCard";
 

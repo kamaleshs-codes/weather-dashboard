@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { getWeather } from "../services/weatherapi";
-import { getLocalDateTime } from "../utils/DateTimeFormat";
-import { Card } from "../components/ui/Card";
+import { getWeather } from "../../services/weatherapi";
+import { getLocalDateTime } from "../../utils/DateTimeFormat";
+import { Card } from "../ui/Card";
 import { FiMapPin } from "react-icons/fi";
-import { useSettings } from "../context/SettingsContext";
-import { convertTemperature } from "../utils/weathersettings";
-import { temperatureSymbol } from "../utils/weathersettings";
+import { useSettings } from "../../context/SettingsContext";
+import { convertTemperature } from "../../utils/weathersettings";
+import { temperatureSymbol } from "../../utils/weathersettings";
 
 export const WeatherCard = ({ weather, dateTime }) => {
   const { day, date, time } = dateTime;
