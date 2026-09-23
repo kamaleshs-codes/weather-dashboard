@@ -16,7 +16,7 @@ import { StaggerAnimation } from "../components/ui/StaggerAnimation";
 
 export const About = () => {
   return (
-    <main className='min-h-screen bg-main text-main'>
+    <main className='min-h-screen bg-primary text-main'>
       <section className='px-6 py-16 sm:px-10 lg:p-16'>
         <div className='mx-auto max-w-7xl'>
           <HeaderBadge icon={Compass} header='ABOUT THE WEATHERLY' />
@@ -72,7 +72,7 @@ export const About = () => {
             <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-secondary'>
               <Layers3 size={25} className='text-main' />
             </div>
-            <h3 className='mt-5 text-xl font-semibold text-text-title'>
+            <h3 className='mt-5 text-xl font-semibold text-primary'>
               Built as a learning project
             </h3>
             <p className='mt-3 leading-7 text-accent font-semibold'>
@@ -128,7 +128,7 @@ export const About = () => {
               <div
                 key={step.number}
                 className='h-full rounded-xl border border-border-muted bg-secondary p-6 shadow-subtle'>
-                <span className='rounded-full bg-main p-2 text-sm font-bold text-text-muted'>
+                <span className='rounded-full bg-primary p-2 text-sm font-bold text-text-muted'>
                   {step.number}
                 </span>
                 <h3 className='mt-4 text-lg font-semibold text-text-title'>

@@ -8,6 +8,7 @@ import { HeaderBadge } from "../components/ui/HeaderBadge";
 import { FeatureSection } from "../components/Home/FeatureSection";
 import { FloatingCard } from "../components/ui/FloatingCard";
 import { StaggerAnimation } from "../components/ui/StaggerAnimation";
+import { Weatherly } from "../components/common/weatherly";
 
 export const Home = ({ sidebarOpen }) => {
   const exploreLinks = [
@@ -51,21 +52,17 @@ export const Home = ({ sidebarOpen }) => {
   ];
 
   return (
-    <div className='min-h-full bg-main text-main'>
-      {/* Hero Section */}
+    <div className='min-h-full bg-primary text-main'>
       <section className='relative overflow-hidden px-4 py-8 sm:px-6 sm:py-10 lg:p-16'>
         <div className='mx-auto flex w-full max-w-7xl flex-col gap-8'>
-          {/* Hero Content */}
           <div className='w-full'>
             <HeaderBadge
               icon={CloudIcon}
               header='YOUR PERSONAL WEATHER COMPANION'
             />
-
             <div
               id='hero-context'
               className='relative mt-3 w-full overflow-hidden rounded-[2.5rem_1.5rem_3rem_1.5rem] border border-border bg-gradient-to-br from-hero-start via-hero-mid to-hero-end px-7 py-10 transition-all duration-300 ease-in-out hover:border hover:border-border-muted hover:shadow-subtle sm:px-10 sm:py-12'>
-              {/* Top-right glow */}
               <div
                 className='
                   pointer-events-none
@@ -76,8 +73,6 @@ export const Home = ({ sidebarOpen }) => {
                   blur-3xl
                 '
               />
-
-              {/* Top-right white glow */}
               <div
                 className='
                   pointer-events-none
@@ -88,11 +83,7 @@ export const Home = ({ sidebarOpen }) => {
                   blur-2xl
                 '
               />
-
-              {/* Diagonal background pattern */}
               <div className='pointer-events-none absolute inset-0 opacity-20 [background-image:repeating-linear-gradient(115deg,transparent_0px,transparent_18px,var(--hero-glow)_19px,transparent_21px)] dark:opacity-10' />
-
-              {/* Bottom-left glow */}
               <div
                 className='
                   pointer-events-none
@@ -103,21 +94,16 @@ export const Home = ({ sidebarOpen }) => {
                   blur-3xl
                 '
               />
-
-              {/* Hero Content */}
               <div className='relative z-10 w-full'>
                 <h1 className='text-4xl font-bold leading-tight text-accent-secondary sm:text-5xl lg:text-7xl'>
                   Weather,
                   <span className='text-text-heading'> Simplified.</span>
                 </h1>
-
                 <p className='mt-6 max-w-3xl text-base leading-7 text-secondary dark:text-text-muted sm:text-lg lg:text-xl'>
                   Get real-time weather information, detailed forecasts,
                   air-quality data, and interactive weather maps — all in one
                   simple and responsive dashboard.
                 </p>
-
-                {/* Hero Buttons */}
                 <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
                   <Link
                     to='/dashboard'
@@ -137,7 +123,6 @@ export const Home = ({ sidebarOpen }) => {
                     Explore Dashboard
                     <ArrowRight size={18} />
                   </Link>
-
                   <Link
                     to='/forecast'
                     className='
@@ -264,17 +249,15 @@ export const Home = ({ sidebarOpen }) => {
         </div>
       </section>
 
-      <footer className='bg-main px-4 py-8 sm:px-6 sm:py-10 lg:px-16'>
+      <footer className='bg-primary px-4 py-8 sm:px-6 sm:py-10 lg:px-16'>
         <div className='mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between'>
-          <div>
-            <h2 className='text-xl font-bold text-accent-secondary'>
-              Weatherly
-            </h2>
+          <div className="flex-col justify-items-center">
+            <Weatherly/>
             <p className='mt-1 text-sm text-text-light-secondary'>
               Your simple weather companion.
             </p>
           </div>
-          <div className='flex flex-wrap items-center gap-5 text-sm text-text-heading'>
+          <div className='flex flex-col items-center gap-5 text-sm text-text-heading'>
             <Link to='/about' className='transition hover:text-secondary'>
               About
             </Link>

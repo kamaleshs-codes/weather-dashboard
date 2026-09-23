@@ -8,9 +8,9 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #d6d7d7;
+  --primary: #dbfff9;
   --secondary: #00203b;
-  --main: #f1fffe;
+  --main: #fdfdfd;
   --accent: #00ffff;
   --accent-secondary: #1100cd;
   --text-muted: #00053e;
@@ -41,12 +41,15 @@
 .dark {
   --primary: #1b212d;
   --secondary: #00102f;
-  --main: #111a2b;
+  --main: #60c2ff;
   --accent: #9efdff;
-  --accent-secondary: #00ffea;
+  --accent-secondary: #0059ff;
   --text-main: #5eb9ff;
-  --text-muted: #e7e7e7;
+  --text-muted: #d2cece;
   --text-light: #94a3b8;
+  --text-light-secondary: #c9d3d0;
+  --text-heading: #00ffea;
+  --text-title: #008a81;
 
   --hero-start: #071b32;
   --hero-mid: #042541;
