@@ -26,24 +26,21 @@ export const DayForecastCard = ({ forecast }) => {
             </span>
           </p>
         </div>
-        <div className='grid grid-cols-5 gap-3'>
+        <div className='grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5'>
           {forecast.map((day) => {
             const formattedDateDay = forecastDayDateFormat(day.date);
-
             return (
               <InnerCard key={day.date}>
                 <div className='flex flex-col gap-2 p-2 items-center'>
                   <p className='font-semibold'>{formattedDateDay.day}</p>
-
                   <p>{formattedDateDay.date}</p>
-
                   <img
                     src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`}
                     alt={day.condition}
                     className='w-16 h-16'
                   />
                   <p>{day.condition}</p>
-                  <div className='flex gap-3'>
+                  <div className='flex gap-2 sm:gap-3'>
                     <h4>
                       {Math.round(
                         convertTemperature(day.high, settings.temperatureUnit),

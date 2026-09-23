@@ -43,28 +43,29 @@ export const DefaultLocation = () => {
     setSearch("");
     setSuggestions([]);
     setShowSuggestions(false);
+
     setTimeout(() => {
       navigate("/dashboard");
     }, 3000);
   };
 
   return (
-    <div className='rounded-xl border border-border-muted bg-primary px-8 py-6 mb-6'>
+    <div className='mb-6 rounded-xl border border-border-muted bg-primary px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
       <div className='mb-4'>
         <h3 className='text-xl font-semibold'>Location Settings</h3>
-        <p className='text-sm text-accent-secondary mt-1 font-semibold'>
+        <p className='mt-1 text-sm font-semibold text-accent-secondary'>
           Choose the default location used for weather information.
         </p>
       </div>
-      <div className='bg-secondary text-main rounded-lg px-6'>
-        <div className='flex items-center justify-between py-4'>
+      <div className='rounded-lg bg-secondary px-3 text-main sm:px-6'>
+        <div className='flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between'>
           <div>
             <h4 className='font-medium'>Default Location</h4>
             <p className='text-sm text-text-light'>
               Choose the location shown when the dashboard opens.
             </p>
           </div>
-          <div className='w-72 rounded-lg border border-border-muted bg-main px-3 py-2'>
+          <div className='w-full rounded-lg border border-border-muted bg-main px-3 py-2 sm:w-72'>
             <p className='text-sm font-semibold text-text-muted'>
               {defaultLocation.name}
               {defaultLocation.state && `, ${defaultLocation.state}`}
@@ -75,30 +76,30 @@ export const DefaultLocation = () => {
         <div className='border-t border-border-muted py-4'>
           <label
             htmlFor='default-location-search'
-            className='block text-sm font-medium mb-2'>
+            className='mb-2 block text-sm font-medium'>
             Search Location
           </label>
           <div className='relative'>
-            <FiSearch className='absolute text-accent-secondary left-4 top-1/2 -translate-y-1/2 text-lg' />
+            <FiSearch className='absolute left-4 top-1/2 -translate-y-1/2 text-lg text-accent-secondary' />
             <input
               id='default-location-search'
               type='text'
               placeholder='Search for a city...'
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className='w-110 rounded-lg border border-border-muted bg-main text-text-muted font-semibold px-4 py-2 pl-10 outline-none focus:border-accent'
+              className='w-full rounded-lg border border-border-muted bg-main px-4 py-2 pl-10 font-semibold text-text-muted outline-none focus:border-accent sm:w-110'
             />
             {showSuggestions && suggestions.length > 0 && (
-              <div className='absolute top-full left-0 right-0 mt-2 border border-border-muted rounded-xl shadow-lg overflow-hidden z-50'>
+              <div className='absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-xl border border-border-muted shadow-lg'>
                 {suggestions.map((location, index) => (
                   <button
                     key={`${location.lat}-${location.lon}-${index}`}
                     type='button'
                     onClick={() => handleLocationSelect(location)}
-                    className={`w-full text-left px-4 py-3 transition-colors ${
+                    className={`w-full px-4 py-3 text-left transition-colors ${
                       index === 0
                         ? "bg-secondary text-main"
-                        : "bg-primary text-text-muted hover:text-secondary hover:bg-accent"
+                        : "bg-primary text-text-muted hover:bg-accent hover:text-secondary"
                     }`}>
                     <p className='font-semibold'>{location.name}</p>
                     <p

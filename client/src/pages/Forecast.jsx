@@ -41,13 +41,13 @@ export const Forecast = () => {
         refreshStatus={refreshStatus}
       />
       <main className='p-4'>
-        <div className='flex justify-between items-center bg-card-theme px-5 py-3 rounded-lg'>
+        <div className='flex flex-col gap-3 rounded-lg bg-card-theme px-5 py-3 md:flex-row md:items-center md:justify-between'>
           <div className='flex items-center gap-2'>
             <span className='text-xl'>
               <FiMapPin />
             </span>
             <div>
-              <p className='font-semibold'>
+              <p className='break-words font-semibold'>
                 {location.name}, {location.state}, {location.country}
               </p>
               <p>
@@ -55,8 +55,8 @@ export const Forecast = () => {
               </p>
             </div>
           </div>
-          <div>
-            <p>
+          <div className='w-full md:w-auto'>
+            <p className='text-sm md:text-base'>
               Updated -{" "}
               {forecastUpdatedAt
                 ? new Date(forecastUpdatedAt * 1000).toLocaleString("en-IN", {

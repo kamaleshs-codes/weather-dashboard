@@ -32,10 +32,10 @@ export const WeatherMap = () => {
         subtitle='Explore weather conditions on the map'
       />
       <main className='p-4'>
-        <div className='w-200 mx-auto'>
-          <Card className='px-10 py-6'>
+        <div className='mx-auto w-full max-w-200'>
+          <Card className='px-3 py-4 sm:px-6 sm:py-6 lg:px-10'>
             <h2 className='text-2xl font-semibold mb-4'>Weather Overview</h2>
-            <div className='relative mx-auto h-[480px] overflow-hidden rounded-xl'>
+            <div className='relative mx-auto h-[400px] overflow-hidden rounded-xl sm:h-[450px] lg:h-[480px]'>
               <MapContainer
                 center={selectedPosition}
                 zoom={8}

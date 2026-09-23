@@ -17,25 +17,21 @@ export const HourlyForecastCard = ({ hour }) => {
 
   return (
     <InnerCard>
-      <div className='flex flex-col items-center gap-2 p-3'>
+      <div className='flex flex-col items-center gap-2 p-2 sm:p-3'>
         <p className='font-semibold'>{formattedTime}</p>
-
         <img
           src={`https://openweathermap.org/img/wn/${hour.icon}@2x.png`}
           alt={hour.condition}
           className='w-16 h-16'
         />
-
         <p className='text-xl font-semibold'>
           {Math.round(
             convertTemperature(hour.temperature, settings.temperatureUnit),
           )}
           {temperatureSymbol(settings.temperatureUnit)}
         </p>
-
         <p className='text-sm'>{hour.condition}</p>
-
-        <div className='flex gap-3 text-sm'>
+        <div className='flex flex-wrap justify-center gap-x-3 gap-y-1 text-sm'>
           <p className='flex items-center'>
             <span className='text-cyan-500 text-xl'>
               <WiRaindrop />

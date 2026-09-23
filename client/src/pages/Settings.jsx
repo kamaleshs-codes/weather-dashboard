@@ -11,11 +11,10 @@ export const Settings = () => {
   return (
     <section className='h-full'>
       <PageHeader title='Settings' subtitle='Manage your weather preferences' />
-
-      <main className='p-6 w-220 mx-auto'>
+      <main className='mx-auto w-full max-w-220 p-4 sm:p-6'>
         {toast && (
           <div
-            className={`toast fixed bottom-6 right-6 z-50 rounded-lg px-5 py-3 text-sm font-semibold shadow-lg ${
+            className={`toast fixed bottom-6 left-4 right-4 z-50 rounded-lg px-5 py-3 text-sm font-semibold shadow-lg sm:left-auto sm:right-6 ${
               toast.type === "success"
                 ? "bg-green-500/90 text-green-900"
                 : toast.type === "error"
@@ -25,18 +24,16 @@ export const Settings = () => {
             {toast.message}
           </div>
         )}
-
         <DefaultLocation />
-
-        <div className='rounded-xl border border-border-muted bg-primary px-8 py-6'>
+        <div className='rounded-xl border border-border-muted bg-primary px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
           <div className='mb-4'>
             <h3 className='text-xl font-semibold'>General Settings</h3>
-            <p className='text-sm text-accent-secondary mt-1 font-semibold'>
+            <p className='mt-1 text-sm font-semibold text-accent-secondary'>
               Customize how weather information is displayed.
             </p>
           </div>
-          <div className='bg-secondary text-main rounded-lg px-6'>
-            <div className='flex items-center justify-between border-b border-border-muted py-4'>
+          <div className='rounded-lg bg-secondary px-3 text-main sm:px-6'>
+            <div className='flex flex-col gap-3 border-b border-border-muted py-4 sm:flex-row sm:items-center sm:justify-between'>
               <div>
                 <h4 className='font-medium'>Temperature Unit</h4>
                 <p className='text-sm text-text-light'>
@@ -48,12 +45,12 @@ export const Settings = () => {
                 onChange={(e) =>
                   updateSettings("temperatureUnit", e.target.value)
                 }
-                className='rounded-lg border border-border-muted text-text-muted bg-main px-3 py-2 outline-none'>
+                className='w-full rounded-lg border border-border-muted bg-main px-3 py-2 text-text-muted outline-none sm:w-auto'>
                 <option value='celsius'>Celsius (°C)</option>
                 <option value='fahrenheit'>Fahrenheit (°F)</option>
               </select>
             </div>
-            <div className='flex items-center justify-between py-4'>
+            <div className='flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between'>
               <div>
                 <h4 className='font-medium'>Wind Speed Unit</h4>
                 <p className='text-sm text-text-light'>
@@ -65,36 +62,34 @@ export const Settings = () => {
                 onChange={(e) =>
                   updateSettings("windSpeedUnit", e.target.value)
                 }
-                className='rounded-lg border border-border-muted text-text-muted bg-main px-3 py-2 outline-none'>
+                className='w-full rounded-lg border border-border-muted bg-main px-3 py-2 text-text-muted outline-none sm:w-auto'>
                 <option value='kmh'>km/h</option>
                 <option value='mph'>mph</option>
               </select>
             </div>
           </div>
         </div>
-
-        <div className='rounded-xl border border-border-muted bg-primary px-8 py-6 mt-6'>
+        <div className='mt-6 rounded-xl border border-border-muted bg-primary px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
           <div className='mb-4'>
             <h3 className='text-xl font-semibold'>Map Settings</h3>
-            <p className='text-sm text-accent-secondary mt-1 font-semibold'>
+            <p className='mt-1 text-sm font-semibold text-accent-secondary'>
               Customize your default weather map view.
             </p>
           </div>
-          <div className='bg-secondary text-main rounded-lg px-6'>
-            <div className='flex items-center justify-between py-4'>
+          <div className='rounded-lg bg-secondary px-3 text-main sm:px-6'>
+            <div className='flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between'>
               <div>
                 <h4 className='font-medium'>Default Map Layer</h4>
                 <p className='text-sm text-text-light'>
                   Choose the weather layer shown when the map opens.
                 </p>
               </div>
-
               <select
                 value={settings.defaultMapLayer}
                 onChange={(e) =>
                   updateSettings("defaultMapLayer", e.target.value)
                 }
-                className='rounded-lg border border-border-muted text-text-muted bg-main px-3 py-2 outline-none'>
+                className='w-full rounded-lg border border-border-muted bg-main px-3 py-2 text-text-muted outline-none sm:w-auto'>
                 <option value='none'>Base Map</option>
                 <option value='temperature'>Temperature</option>
                 <option value='precipitation'>Precipitation</option>
@@ -104,16 +99,15 @@ export const Settings = () => {
             </div>
           </div>
         </div>
-
-        <div className='rounded-xl border border-border-muted bg-primary px-8 py-6 mt-6'>
+        <div className='mt-6 rounded-xl border border-border-muted bg-primary px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
           <div className='mb-4'>
             <h3 className='text-xl font-semibold'>Appearance Settings</h3>
-            <p className='text-sm text-accent-secondary mt-1 font-semibold'>
+            <p className='mt-1 text-sm font-semibold text-accent-secondary'>
               Customize the visual appearance of the dashboard.
             </p>
           </div>
-          <div className='bg-secondary text-main rounded-lg px-6'>
-            <div className='flex items-center justify-between py-4'>
+          <div className='rounded-lg bg-secondary px-3 text-main sm:px-6'>
+            <div className='flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between'>
               <div>
                 <h4 className='font-medium'>Theme</h4>
                 <p className='text-sm text-text-light'>
@@ -123,23 +117,22 @@ export const Settings = () => {
               <select
                 value={settings.theme}
                 onChange={(e) => updateSettings("theme", e.target.value)}
-                className='rounded-lg border border-border-muted text-text-muted bg-main px-3 py-2 outline-none'>
+                className='w-full rounded-lg border border-border-muted bg-main px-3 py-2 text-text-muted outline-none sm:w-auto'>
                 <option value='light'>Light</option>
                 <option value='dark'>Dark</option>
               </select>
             </div>
           </div>
         </div>
-
-        <div className='rounded-xl border border-border-muted bg-primary px-8 py-6 mt-6'>
+        <div className='mt-6 rounded-xl border border-border-muted bg-primary px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
           <div className='mb-4'>
             <h3 className='text-xl font-semibold'>Notification Settings</h3>
-            <p className='text-sm text-accent-secondary mt-1 font-semibold'>
+            <p className='mt-1 text-sm font-semibold text-accent-secondary'>
               Manage weather notifications and automatic updates.
             </p>
           </div>
-          <div className='bg-secondary text-main rounded-lg px-6'>
-            <div className='flex items-center justify-between border-b border-border-muted py-4'>
+          <div className='rounded-lg bg-secondary px-3 text-main sm:px-6'>
+            <div className='flex flex-col gap-3 border-b border-border-muted py-4 sm:flex-row sm:items-center sm:justify-between'>
               <div>
                 <h4 className='font-medium'>Weather Alerts</h4>
                 <p className='text-sm text-text-light'>
@@ -151,7 +144,7 @@ export const Settings = () => {
                 onChange={(value) => updateSettings("weatherAlerts", value)}
               />
             </div>
-            <div className='flex items-center justify-between border-b border-border-muted py-4'>
+            <div className='flex flex-col gap-3 border-b border-border-muted py-4 sm:flex-row sm:items-center sm:justify-between'>
               <div>
                 <h4 className='font-medium'>Daily Summary</h4>
                 <p className='text-sm text-text-light'>
@@ -163,7 +156,7 @@ export const Settings = () => {
                 onChange={(value) => updateSettings("dailySummary", value)}
               />
             </div>
-            <div className='flex items-center justify-between py-4'>
+            <div className='flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between'>
               <div>
                 <h4 className='font-medium'>Auto Refresh</h4>
                 <p className='text-sm text-text-light'>
@@ -178,12 +171,11 @@ export const Settings = () => {
             </div>
           </div>
         </div>
-
         <button
           type='button'
           onClick={saveSettings}
           disabled={saving}
-          className='rounded-lg bg-accent-secondary mt-4 px-5 py-2.5 text-sm font-bold text-main transition hover:bg-accent hover:text-secondary disabled:cursor-not-allowed disabled:opacity-60'>
+          className='mt-4 w-full rounded-lg bg-accent-secondary px-5 py-2.5 text-sm font-bold text-main transition hover:bg-accent hover:text-secondary disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto'>
           {saving ? "Saving..." : "Save Changes"}
         </button>
       </main>
