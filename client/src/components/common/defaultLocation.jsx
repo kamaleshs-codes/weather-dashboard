@@ -50,14 +50,14 @@ export const DefaultLocation = () => {
   };
 
   return (
-    <div className='mb-6 rounded-xl border border-border-muted bg-primary px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
+    <div className='mb-6 rounded-xl border border-border-muted bg-main px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
       <div className='mb-4'>
         <h3 className='text-xl font-semibold'>Location Settings</h3>
         <p className='mt-1 text-sm font-semibold text-accent-secondary'>
           Choose the default location used for weather information.
         </p>
       </div>
-      <div className='rounded-lg bg-secondary px-3 text-main sm:px-6'>
+      <div className='rounded-lg bg-secondary px-3 text-primary sm:px-6'>
         <div className='flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between'>
           <div>
             <h4 className='font-medium'>Default Location</h4>
@@ -98,13 +98,13 @@ export const DefaultLocation = () => {
                     onClick={() => handleLocationSelect(location)}
                     className={`w-full px-4 py-3 text-left transition-colors ${
                       index === 0
-                        ? "bg-secondary text-main"
-                        : "bg-primary text-text-muted hover:bg-accent hover:text-secondary"
+                        ? "bg-secondary text-primary"
+                        : "bg-main text-text-muted hover:bg-accent hover:text-secondary"
                     }`}>
                     <p className='font-semibold'>{location.name}</p>
                     <p
                       className={`text-sm ${
-                        index === 0 ? "text-main" : "text-text-secondary"
+                        index === 0 ? "text-primary" : "text-text-secondary"
                       }`}>
                       {location.state && `${location.state}, `}
                       {location.country}

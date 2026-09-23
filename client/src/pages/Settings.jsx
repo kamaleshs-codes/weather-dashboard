@@ -25,14 +25,14 @@ export const Settings = () => {
           </div>
         )}
         <DefaultLocation />
-        <div className='rounded-xl border border-border-muted bg-primary px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
+        <div className='rounded-xl border border-border-muted bg-main px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
           <div className='mb-4'>
             <h3 className='text-xl font-semibold'>General Settings</h3>
             <p className='mt-1 text-sm font-semibold text-accent-secondary'>
               Customize how weather information is displayed.
             </p>
           </div>
-          <div className='rounded-lg bg-secondary px-3 text-main sm:px-6'>
+          <div className='rounded-lg bg-secondary px-3 text-primary sm:px-6'>
             <div className='flex flex-col gap-3 border-b border-border-muted py-4 sm:flex-row sm:items-center sm:justify-between'>
               <div>
                 <h4 className='font-medium'>Temperature Unit</h4>
@@ -69,14 +69,14 @@ export const Settings = () => {
             </div>
           </div>
         </div>
-        <div className='mt-6 rounded-xl border border-border-muted bg-primary px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
+        <div className='mt-6 rounded-xl border border-border-muted bg-main px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
           <div className='mb-4'>
             <h3 className='text-xl font-semibold'>Map Settings</h3>
             <p className='mt-1 text-sm font-semibold text-accent-secondary'>
               Customize your default weather map view.
             </p>
           </div>
-          <div className='rounded-lg bg-secondary px-3 text-main sm:px-6'>
+          <div className='rounded-lg bg-secondary px-3 text-primary sm:px-6'>
             <div className='flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between'>
               <div>
                 <h4 className='font-medium'>Default Map Layer</h4>
@@ -99,14 +99,14 @@ export const Settings = () => {
             </div>
           </div>
         </div>
-        <div className='mt-6 rounded-xl border border-border-muted bg-primary px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
+        <div className='mt-6 rounded-xl border border-border-muted bg-main px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
           <div className='mb-4'>
             <h3 className='text-xl font-semibold'>Appearance Settings</h3>
             <p className='mt-1 text-sm font-semibold text-accent-secondary'>
               Customize the visual appearance of the dashboard.
             </p>
           </div>
-          <div className='rounded-lg bg-secondary px-3 text-main sm:px-6'>
+          <div className='rounded-lg bg-secondary px-3 text-primary sm:px-6'>
             <div className='flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between'>
               <div>
                 <h4 className='font-medium'>Theme</h4>
@@ -124,14 +124,14 @@ export const Settings = () => {
             </div>
           </div>
         </div>
-        <div className='mt-6 rounded-xl border border-border-muted bg-primary px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
+        <div className='mt-6 rounded-xl border border-border-muted bg-main px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
           <div className='mb-4'>
             <h3 className='text-xl font-semibold'>Notification Settings</h3>
             <p className='mt-1 text-sm font-semibold text-accent-secondary'>
               Manage weather notifications and automatic updates.
             </p>
           </div>
-          <div className='rounded-lg bg-secondary px-3 text-main sm:px-6'>
+          <div className='rounded-lg bg-secondary px-3 text-primary sm:px-6'>
             <div className='flex flex-col gap-3 border-b border-border-muted py-4 sm:flex-row sm:items-center sm:justify-between'>
               <div>
                 <h4 className='font-medium'>Weather Alerts</h4>
@@ -175,7 +175,7 @@ export const Settings = () => {
           type='button'
           onClick={saveSettings}
           disabled={saving}
-          className='mt-4 w-full rounded-lg bg-accent-secondary px-5 py-2.5 text-sm font-bold text-main transition hover:bg-accent hover:text-secondary disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto'>
+          className='mt-4 w-full rounded-lg bg-accent-secondary px-5 py-2.5 text-sm font-bold text-primary transition hover:bg-accent hover:text-secondary disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto'>
           {saving ? "Saving..." : "Save Changes"}
         </button>
       </main>

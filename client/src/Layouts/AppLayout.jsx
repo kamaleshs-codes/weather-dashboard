@@ -37,7 +37,7 @@ const AppLayout = ({ location, setLocation }) => {
                     <NavLink
                       to={item.path}
                       onClick={toggleSidebar}
-                      className='flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-semibold text-main transition-all duration-300 hover:bg-accent hover:text-secondary'>
+                      className='flex items-center gap-4 rounded-lg px-4 py-3 text-lg font-semibold text-primary transition-all duration-300 hover:bg-accent hover:text-secondary'>
                       <Icon size={22} />
                       <span>{item.label}</span>
                     </NavLink>

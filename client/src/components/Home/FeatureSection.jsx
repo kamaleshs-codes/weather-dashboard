@@ -53,7 +53,7 @@ export const FeatureSection = () => {
             return (
               <div
                 key={feature.title}
-                className='h-full rounded-xl bg-primary p-6 transition-all duration-300 ease-in-out hover:translate-y-1 hover:border-border-muted hover:shadow-drop'>
+                className='h-full rounded-xl bg-surface p-6 transition-all duration-300 ease-in-out hover:translate-y-1 hover:border-border-muted hover:shadow-drop'>
                 <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-secondary'>
                   <Icon size={26} className='text-accent' />
                 </div>

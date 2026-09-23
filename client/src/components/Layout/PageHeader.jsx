@@ -11,7 +11,7 @@ export const PageHeader = ({
 }) => {
   const [isAlertOpen, setIsAlertOpen] = useState(false);
   return (
-    <header className='flex flex-col gap-4 px-5 py-3 bg-primary border-b-2 border-border-muted md:flex-row md:items-center md:gap-8'>
+    <header className='flex flex-col gap-4 px-5 py-3 bg-surface border-b-2 border-border-muted md:flex-row md:items-center md:gap-8'>
       <div className='w-full md:w-auto'>
         <h1 className='lg:text-xl text-md font-bold'>{title}</h1>
         <p className='lg:text-lg text-md'>{subtitle}</p>

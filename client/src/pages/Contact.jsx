@@ -62,7 +62,7 @@ export const Contact = () => {
   };
 
   return (
-    <main className='min-h-screen bg-main text-main'>
+    <main className='min-h-screen bg-main text-primary'>
       <section className='px-6 py-16 sm:px-10 lg:p-16'>
         <div className='mx-auto max-w-7xl'>
           <HeaderBadge
@@ -107,15 +107,15 @@ export const Contact = () => {
                       href={item.href}
                       target={item.label !== "Email" ? "_blank" : undefined}
                       rel={item.label !== "Email" ? "noreferrer" : undefined}
-                      className='flex items-center gap-4 rounded-xl border border-border-muted bg-primary p-5 hover:shadow-subtle transition hover:border-accent'>
+                      className='flex items-center gap-4 rounded-xl border border-border-muted bg-surface p-5 hover:shadow-subtle transition hover:border-accent'>
                       <div className='flex h-11 w-11 items-center justify-center rounded-lg bg-secondary'>
                         <Icon size={22} className='text-accent' />
                       </div>
                       <div>
-                        <p className='text-sm text-accent-secondary'>
+                        <p className='text-sm font-bold text-text-heading'>
                           {item.label}
                         </p>
-                        <p className='mt-1 font-semibold text-text-heading'>
+                        <p className='mt-1 font-semibold text-accent-secondary'>
                           {item.value}
                         </p>
                       </div>
@@ -128,7 +128,9 @@ export const Contact = () => {
 
           <div className='rounded-2xl border border-border-muted bg-secondary p-6 shadow-subtle sm:p-8'>
             <div>
-              <h2 className='text-2xl font-bold text-main'>Send a message</h2>
+              <h2 className='text-2xl font-bold text-primary'>
+                Send a message
+              </h2>
               <p className='mt-2 text-sm leading-6 text-text-light'>
                 Fill in the form below to share your message.
               </p>
@@ -139,7 +141,7 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor='name'
-                  className='mb-2 block text-sm font-semibold text-main'>
+                  className='mb-2 block text-sm font-semibold text-primary'>
                   Name
                 </label>
                 <input
@@ -156,7 +158,7 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor='email'
-                  className='mb-2 block text-sm font-semibold text-main'>
+                  className='mb-2 block text-sm font-semibold text-primary'>
                   Email
                 </label>
                 <input
@@ -173,7 +175,7 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor='subject'
-                  className='mb-2 block text-sm font-semibold text-main'>
+                  className='mb-2 block text-sm font-semibold text-primary'>
                   Subject
                 </label>
                 <input
@@ -190,7 +192,7 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor='message'
-                  className='mb-2 block text-sm font-semibold text-main'>
+                  className='mb-2 block text-sm font-semibold text-primary'>
                   Message
                 </label>
                 <textarea
@@ -206,7 +208,7 @@ export const Contact = () => {
               </div>
               <button
                 type='submit'
-                className='inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 font-semibold text-secondary shadow-subtle transition hover:scale-[1.01] hover:bg-accent-secondary hover:text-main'>
+                className='inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 font-semibold text-secondary shadow-subtle transition hover:scale-[1.01] hover:bg-accent-secondary hover:text-primary'>
                 Send Message
                 <Send size={18} />
               </button>

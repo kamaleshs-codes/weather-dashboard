@@ -61,7 +61,7 @@ export const WeatherMap = () => {
                   </Popup>
                 </Marker>
               </MapContainer>
-              <div className='absolute top-4 right-4 z-[1000] rounded-xl bg-main/65 p-3 shadow-lg'>
+              <div className='absolute top-4 right-4 z-[1000] rounded-xl bg-surface p-3 shadow-lg'>
                 <h3 className='mb-2 text-md font-semibold text-text-muted'>
                   Weather Layers
                 </h3>
@@ -70,8 +70,8 @@ export const WeatherMap = () => {
                     onClick={() => setActiveLayer("none")}
                     className={`rounded-lg px-3 py-2 text-left text-sm font-semibold ${
                       activeLayer === "none"
-                        ? "bg-secondary text-main"
-                        : "text-secondary hover:bg-accent"
+                        ? "bg-secondary text-primary"
+                        : "text-text-muted hover:bg-accent hover:text-secondary"
                     }`}>
                     🗺️ Base Map
                   </button>
@@ -79,8 +79,8 @@ export const WeatherMap = () => {
                     onClick={() => setActiveLayer("temperature")}
                     className={`rounded-lg px-3 py-2 text-left text-sm font-semibold ${
                       activeLayer === "temperature"
-                        ? "bg-secondary text-main"
-                        : "text-secondary hover:bg-accent"
+                        ? "bg-secondary text-primary"
+                        : "text-text-muted hover:bg-accent hover:text-secondary"
                     }`}>
                     🌡️ Temperature
                   </button>
@@ -88,8 +88,8 @@ export const WeatherMap = () => {
                     onClick={() => setActiveLayer("precipitation")}
                     className={`rounded-lg px-3 py-2 text-left text-sm font-semibold ${
                       activeLayer === "precipitation"
-                        ? "bg-secondary text-main"
-                        : "text-secondary hover:bg-accent"
+                        ? "bg-secondary text-primary"
+                        : "text-text-muted hover:bg-accent hover:text-secondary"
                     }`}>
                     🌧️ Precipitation
                   </button>
@@ -97,8 +97,8 @@ export const WeatherMap = () => {
                     onClick={() => setActiveLayer("clouds")}
                     className={`rounded-lg px-3 py-2 text-left text-sm font-semibold ${
                       activeLayer === "clouds"
-                        ? "bg-secondary text-main"
-                        : "text-secondary hover:bg-accent"
+                        ? "bg-secondary text-primary"
+                        : "text-text-muted hover:bg-accent hover:text-secondary"
                     }`}>
                     ☁️ Clouds
                   </button>
@@ -106,8 +106,8 @@ export const WeatherMap = () => {
                     onClick={() => setActiveLayer("wind")}
                     className={`rounded-lg px-3 py-2 text-left text-sm font-semibold ${
                       activeLayer === "wind"
-                        ? "bg-secondary text-main"
-                        : "text-secondary hover:bg-accent"
+                        ? "bg-secondary text-primary"
+                        : "text-text-muted hover:bg-accent hover:text-secondary"
                     }`}>
                     💨 Wind
                   </button>

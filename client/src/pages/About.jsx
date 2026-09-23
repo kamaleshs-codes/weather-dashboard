@@ -16,7 +16,7 @@ import { StaggerAnimation } from "../components/ui/StaggerAnimation";
 
 export const About = () => {
   return (
-    <main className='min-h-screen bg-primary text-main'>
+    <main className='min-h-screen bg-main text-primary'>
       <section className='px-6 py-16 sm:px-10 lg:p-16'>
         <div className='mx-auto max-w-7xl'>
           <HeaderBadge icon={Compass} header='ABOUT THE WEATHERLY' />
@@ -37,7 +37,7 @@ export const About = () => {
               <div className='mt-8'>
                 <Link
                   to='/dashboard'
-                  className='inline-flex items-center gap-2 rounded-lg bg-secondary px-5 py-3 font-semibold text-main shadow-subtle transition hover:scale-[1.02] hover:bg-accent hover:text-secondary'>
+                  className='inline-flex items-center gap-2 rounded-lg bg-secondary px-5 py-3 font-semibold text-primary shadow-subtle transition hover:scale-[1.02] hover:bg-accent hover:text-secondary'>
                   Explore the Dashboard
                   <ArrowRight size={18} />
                 </Link>
@@ -70,7 +70,7 @@ export const About = () => {
           </div>
           <div className='rounded-2xl border border-border hover:border hover:border-border-muted bg-accent-secondary p-7 hover:shadow-subtle transition duration-300 ease-in-out'>
             <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-secondary'>
-              <Layers3 size={25} className='text-main' />
+              <Layers3 size={25} className='text-primary' />
             </div>
             <h3 className='mt-5 text-xl font-semibold text-primary'>
               Built as a learning project
@@ -128,7 +128,7 @@ export const About = () => {
               <div
                 key={step.number}
                 className='h-full rounded-xl border border-border-muted bg-secondary p-6 shadow-subtle'>
-                <span className='rounded-full bg-primary p-2 text-sm font-bold text-text-muted'>
+                <span className='rounded-full bg-main p-2 text-sm font-bold text-text-muted'>
                   {step.number}
                 </span>
                 <h3 className='mt-4 text-lg font-semibold text-text-title'>
@@ -185,7 +185,7 @@ export const About = () => {
               return (
                 <div
                   key={technology.title}
-                  className='rounded-xl border border-border-muted bg-primary p-6 shadow-subtle'>
+                  className='rounded-xl border border-border-muted bg-surface p-6 shadow-subtle'>
                   <div className='flex h-11 w-11 items-center justify-center rounded-lg bg-secondary'>
                     <Icon size={23} className='text-accent' />
                   </div>
@@ -204,7 +204,7 @@ export const About = () => {
 
       <section className='px-6 py-12 sm:px-10 lg:px-16'>
         <div className='mx-auto max-w-7xl'>
-          <div className='rounded-2xl border border-border-muted bg-primary p-8 shadow-subtle sm:p-10'>
+          <div className='rounded-2xl border border-border-muted bg-surface p-8 shadow-subtle sm:p-10'>
             <div className='flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between'>
               <div className='max-w-2xl'>
                 <div className='flex items-center gap-2 text-text-heading'>

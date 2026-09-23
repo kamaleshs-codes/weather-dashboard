@@ -52,7 +52,7 @@ export const Home = ({ sidebarOpen }) => {
   ];
 
   return (
-    <div className='min-h-full bg-primary text-main'>
+    <div className='min-h-full bg-main text-primary'>
       <section className='relative overflow-hidden px-4 py-8 sm:px-6 sm:py-10 lg:p-16'>
         <div className='mx-auto flex w-full max-w-7xl flex-col gap-8'>
           <div className='w-full'>
@@ -113,7 +113,7 @@ export const Home = ({ sidebarOpen }) => {
                       bg-secondary
                       px-5 py-3
                       font-semibold
-                      text-main
+                      text-primary
                       shadow-subtle
                       transition
                       hover:scale-[1.02]
@@ -138,9 +138,9 @@ export const Home = ({ sidebarOpen }) => {
                       hover:border-accent
                       hover:bg-accent
                       hover:text-secondary
-                      dark:border-text-main/30
+                      dark:border-text-primary/30
                       dark:bg-black/10
-                      dark:text-main
+                      dark:text-primary
                     '>
                     View Forecast
                   </Link>
@@ -155,7 +155,7 @@ export const Home = ({ sidebarOpen }) => {
                 sidebarOpen
                   ? "sm:h-[16rem] md:h-[23rem] lg:h-[34.5rem]"
                   : "sm:h-[18rem] md:h-[27rem] lg:h-[41rem]"
-              } overflow-hidden rounded-3xl border border-border bg-primary p-2 transition-all duration-300 ease-in-out hover:border-border-muted hover:shadow-subtle sm:p-3 lg:p-4`}>
+              } overflow-hidden rounded-3xl border border-border bg-main p-2 transition-all duration-300 ease-in-out hover:border-border-muted hover:shadow-subtle sm:p-3 lg:p-4`}>
               <div className='hero-image-track'>
                 <div className='hero-image-card'>
                   <img
@@ -229,7 +229,7 @@ export const Home = ({ sidebarOpen }) => {
               <Link
                 key={item.title}
                 to={item.link}
-                className='group block rounded-xl border border-border-muted bg-primary p-6 text-left transition duration-300 ease-in-out hover:border-border-muted hover:shadow-drop'>
+                className='group block rounded-xl border border-border-muted bg-surface p-6 text-left transition duration-300 ease-in-out hover:border-border-muted hover:shadow-drop'>
                 <h3 className='mt-5 text-xl font-semibold text-text-heading'>
                   {item.title}
                 </h3>
@@ -249,10 +249,10 @@ export const Home = ({ sidebarOpen }) => {
         </div>
       </section>
 
-      <footer className='bg-primary px-4 py-8 sm:px-6 sm:py-10 lg:px-16'>
+      <footer className='bg-main px-4 py-8 sm:px-6 sm:py-10 lg:px-16'>
         <div className='mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between'>
-          <div className="flex-col justify-items-center">
-            <Weatherly/>
+          <div className='flex-col justify-items-center'>
+            <Weatherly />
             <p className='mt-1 text-sm text-text-light-secondary'>
               Your simple weather companion.
             </p>

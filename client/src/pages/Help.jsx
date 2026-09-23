@@ -15,7 +15,7 @@ import {
 import { Link } from "react-router-dom";
 import { HeaderBadge } from "../components/ui/HeaderBadge";
 import { StaggerAnimation } from "../components/ui/StaggerAnimation";
-import { FloatingCard } from '../components/ui/FloatingCard';
+import { FloatingCard } from "../components/ui/FloatingCard";
 
 export const Help = () => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -98,7 +98,7 @@ export const Help = () => {
   ];
 
   return (
-    <main className='min-h-screen bg-main text-main'>
+    <main className='min-h-screen bg-main text-primary'>
       <section className='px-6 py-16 sm:px-10 lg:px-16'>
         <div className='mx-auto max-w-7xl'>
           <HeaderBadge icon={LifeBuoy} header='HERE TO HELP YOU' />
@@ -140,10 +140,10 @@ export const Help = () => {
                   className='h-full rounded-xl border border-border-muted bg-accent-secondary p-6 shadow-subtle'>
                   <div className='flex items-center justify-between'>
                     <div className='flex h-12 w-12 items-center justify-center rounded-lg bg-secondary'>
-                      <Icon size={25} className='text-main' />
+                      <Icon size={25} className='text-primary' />
                     </div>
                   </div>
-                  <h3 className='mt-5 text-lg font-semibold text-main'>
+                  <h3 className='mt-5 text-lg font-semibold text-primary'>
                     {step.title}
                   </h3>
                   <p className='mt-3 text-sm leading-6 font-semibold text-accent'>
@@ -175,7 +175,7 @@ export const Help = () => {
                 <div className='rounded-xl border border-border-muted bg-secondary p-6 shadow-subtle'>
                   <div className='flex items-center gap-3'>
                     <div className='h-2 w-2 rounded-full bg-accent' />
-                    <h3 className='font-semibold text-main'>{item.title}</h3>
+                    <h3 className='font-semibold text-primary'>{item.title}</h3>
                   </div>
                   <p className='mt-3 pl-5 text-sm leading-6 text-text-light'>
                     {item.description}
@@ -196,7 +196,7 @@ export const Help = () => {
                   <Settings size={21} />
                   <span className='font-semibold'>Settings</span>
                 </div>
-                <h2 className='mt-4 text-3xl font-bold text-main'>
+                <h2 className='mt-4 text-3xl font-bold text-primary'>
                   Customize your experience
                 </h2>
                 <p className='mt-4 leading-7 text-text-light'>
@@ -206,7 +206,7 @@ export const Help = () => {
               </div>
               <Link
                 to='/settings'
-                className='inline-flex w-fit items-center gap-2 rounded-lg bg-accent px-5 py-3 font-semibold text-secondary shadow-subtle transition hover:bg-primary hover:text-text-heading hover:scale-[1.02]'>
+                className='inline-flex w-fit items-center gap-2 rounded-lg bg-accent px-5 py-3 font-semibold text-secondary shadow-subtle transition hover:bg-main hover:text-text-heading hover:scale-[1.02]'>
                 Open Settings
                 <ArrowRight size={18} />
               </Link>
@@ -222,7 +222,7 @@ export const Help = () => {
               ].map((item) => (
                 <div
                   key={item}
-                  className='rounded-lg border border-border-muted bg-primary px-4 py-4 text-sm font-medium text-text-muted'>
+                  className='rounded-lg border border-border-muted bg-main px-4 py-4 text-sm font-medium text-text-muted'>
                   {item}
                 </div>
               ))}
@@ -255,7 +255,7 @@ export const Help = () => {
                     type='button'
                     onClick={() => toggleFaq(index)}
                     className='flex w-full items-center justify-between gap-4 px-5 py-5 text-left'>
-                    <span className='font-semibold text-main'>
+                    <span className='font-semibold text-primary'>
                       {faq.question}
                     </span>
                     <ChevronDown
@@ -282,7 +282,7 @@ export const Help = () => {
       <section className='px-6 py-16 sm:px-10 lg:px-16'>
         <div className='mx-auto max-w-3xl text-center'>
           <div className='mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-accent-secondary'>
-            <MessageSquare size={23} className='text-main' />
+            <MessageSquare size={23} className='text-primary' />
           </div>
           <h2 className='mt-5 text-3xl font-bold text-text-muted sm:text-4xl'>
             Still need help?

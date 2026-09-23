@@ -5,14 +5,14 @@ import { sidebarNavLinks } from "../../data/navigation";
 
 const Sidebar = () => {
   return (
-    <aside className='flex h-screen w-full flex-col items-center border-r-2 border-border bg-secondary text-main'>
+    <aside className='flex h-screen w-full flex-col items-center border-r-2 border-border bg-surface text-primary'>
       <img
         src={weatherImg}
         alt='Weather Dashboard'
         className='hidden md:block h-52 w-full object-cover object-top'
       />
       <nav className='w-full bg-secondary text-center'>
-        <ul className='flex flex-col bg-primary text-xl font-semibold text-text-muted'>
+        <ul className='flex flex-col bg-main text-xl font-semibold text-text-muted'>
           {sidebarNavLinks.map((item) => {
             const Icon = item.icon;
             return (

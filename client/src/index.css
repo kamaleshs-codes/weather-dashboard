@@ -11,8 +11,9 @@
   --primary: #dbfff9;
   --secondary: #00203b;
   --main: #fdfdfd;
+  --surface: #b0cbcb;
   --accent: #00ffff;
-  --accent-secondary: #1100cd;
+  --accent-secondary: #0d00a1;
   --text-muted: #00053e;
   --text-light: #8ea0a0;
   --text-light-secondary: #4f5152;
@@ -39,16 +40,17 @@
 }
 
 .dark {
-  --primary: #1b212d;
+  --primary: #c0c3c2;
   --secondary: #00102f;
-  --main: #60c2ff;
+  --main: #001f3a;
+  --surface:#080012;
   --accent: #9efdff;
   --accent-secondary: #0059ff;
-  --text-main: #5eb9ff;
+  --text-primary: #5eb9ff;
   --text-muted: #d2cece;
   --text-light: #94a3b8;
-  --text-light-secondary: #c9d3d0;
-  --text-heading: #00ffea;
+  --text-light-secondary: #dfd8d8;
+  --text-heading: #00b7a8;
   --text-title: #008a81;
 
   --hero-start: #071b32;
@@ -75,6 +77,7 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-main: var(--main);
+  --color-surface: var(--surface);
   --color-accent: var(--accent);
   --color-accent-secondary: var(--accent-secondary);
   --color-text-accent: var(--accent);

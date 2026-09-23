@@ -103,7 +103,7 @@ export const WeatherDetailsCard = ({ weather, dateTime, airQuality }) => {
 
   return (
     <Card>
-      <h2 className='text-2xl text-main font-semibold mb-3'>
+      <h2 className='text-2xl text-primary font-semibold mb-3'>
         Today's Highlights
       </h2>
       <section className='flex flex-col gap-3 lg:flex-row'>
