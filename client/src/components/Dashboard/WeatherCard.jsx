@@ -1,6 +1,3 @@
-import React, { useEffect, useState } from "react";
-import { getWeather } from "../../services/weatherapi";
-import { getLocalDateTime } from "../../utils/DateTimeFormat";
 import { Card } from "../ui/Card";
 import { FiMapPin } from "react-icons/fi";
 import { useSettings } from "../../context/SettingsContext";
@@ -17,19 +14,19 @@ export const WeatherCard = ({ weather, dateTime }) => {
       <h2 className='text-2xl font-semibold mb-3'>Current Weather</h2>
       <section className='bg-inner-card rounded-xl shadow-subtle'>
         <article className='px-4 py-2'>
-          <p className='flex gap-1 w-max text-center bg-primary hover:bg-accent hover:text-secondary text-text-muted border border-border rounded-full px-4 py-2 mt-1 font-semibold'>
+          <p className='flex gap-1 w-fit max-w-full text-center bg-primary hover:bg-accent hover:text-secondary text-text-muted border border-border rounded-full px-4 py-2 mt-1 font-semibold'>
             <FiMapPin className='text-lg' /> <span>{weather.name}</span>
           </p>
-          <div className='flex justify-around mt-2'>
-            <div className='flex flex-col gap-2'>
+          <div className='flex flex-col gap-4 mt-2 sm:flex-row sm:justify-around'>
+            <div className='flex flex-col mt-3 gap-2 lg:items-start items-center'>
               <div>
                 <h3 className='font-semibold text-lg'>{day}</h3>
                 <p>{date}</p>
                 <p className='text-sm'>{time}</p>
               </div>
-              <img src={iconUrl} alt={weather.weather[0].description} />
+              <img src={iconUrl} alt={weather.weather[0].description} className="lg:w-30 lg:h-30"/>
             </div>
-            <div className='flex flex-col justify-around'>
+            <div className='flex flex-col justify-around lg:p-0 p-7'>
               <p className='text-4xl'>
                 {Math.round(
                   convertTemperature(

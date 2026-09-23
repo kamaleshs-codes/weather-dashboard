@@ -96,8 +96,8 @@ export const Dashboard = () => {
   return (
     <div>
       <DashboardHeader onSearch={setLocation} weatherAlerts={weatherAlerts} />
-      <section className='p-4 flex gap-7'>
-        <div className='w-1/3'>
+      <section className='flex flex-col gap-7 p-4 lg:flex-row'>
+        <div className='w-full lg:w-1/3'>
           <div className='flex flex-col'>
             <WeatherCard weather={weather} dateTime={dateTime} />
             {dailySummaryEnabled && <DailySummary summary={dailySummary} />}

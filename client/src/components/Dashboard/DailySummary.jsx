@@ -23,7 +23,7 @@ export const DailySummary = ({ summary }) => {
       </p>
 
       {isOpen && (
-        <div className='absolute left-full bottom-5 ml-4 w-96 bg-main text-text-muted border-2 border-border-muted rounded-lg shadow-drop z-50'>
+        <div className='absolute bottom-5 left-0 z-50 w-full rounded-lg border-2 border-border-muted bg-main text-text-muted shadow-drop sm:left-full sm:ml-4 sm:w-96'>
           <div className='flex items-center justify-between p-4 border-b border-border-muted'>
             <h2 className='font-semibold text-lg'>Today's Summary</h2>
             <LuX

@@ -106,14 +106,14 @@ export const WeatherDetailsCard = ({ weather, dateTime, airQuality }) => {
       <h2 className='text-2xl text-main font-semibold mb-3'>
         Today's Highlights
       </h2>
-      <section className='flex gap-3'>
-        <div className='w-[60%] grid grid-cols-2 grid-rows-3 gap-3'>
+      <section className='flex flex-col gap-3 lg:flex-row'>
+        <div className='grid w-full grid-cols-2 gap-3 lg:w-[60%] lg:grid-rows-3'>
           {cards.map((card) => {
             const Icon = card.icon;
             return (
               <InnerCard key={card.title}>
                 <h3 className='text-xl font-semibold'>{card.title}</h3>
-                <div className='mt-3 flex gap-7 items-center'>
+                <div className='mt-3 flex items-center gap-3 sm:gap-7'>
                   <div>
                     <p>{card.value}</p>
                     <p>{card.secondary}</p>
@@ -125,7 +125,7 @@ export const WeatherDetailsCard = ({ weather, dateTime, airQuality }) => {
           })}
         </div>
 
-        <div className='w-[40%] flex flex-col gap-3'>
+        <div className='flex w-full flex-col gap-3 lg:w-[40%]'>
           <InnerCard className='flex-1 py-4'>
             <div className='flex flex-col gap-1'>
               <div className='flex justify-around'>

@@ -6,7 +6,7 @@ import { headerNavLinks, sidebarNavLinks } from "../data/navigation";
 import { NavLink } from "react-router-dom";
 
 const AppLayout = ({ location, setLocation }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarOpen((prev) => !prev);

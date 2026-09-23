@@ -11,15 +11,15 @@ export const PageHeader = ({
 }) => {
   const [isAlertOpen, setIsAlertOpen] = useState(false);
   return (
-    <header className='flex gap-8 items-center px-5 py-3 bg-primary border-b-2 border-border-muted'>
-      <div>
-        <h1 className='text-xl font-bold'>{title}</h1>
-        <p className='text-lg'>{subtitle}</p>
+    <header className='flex flex-col gap-4 px-5 py-3 bg-primary border-b-2 border-border-muted md:flex-row md:items-center md:gap-8'>
+      <div className='w-full md:w-auto'>
+        <h1 className='lg:text-xl text-md font-bold'>{title}</h1>
+        <p className='lg:text-lg text-md'>{subtitle}</p>
       </div>
-
-      <div className='flex-1'>{children && <div>{children}</div>}</div>
-
-      <div className='flex flex-col gap-2 items-end'>
+      <div className='w-full md:flex-1'>
+        {children && <div>{children}</div>}
+      </div>
+      <div className='flex w-full flex-col items-start gap-2 md:w-auto md:items-end'>
         {refreshStatus && (
           <div className='text-sm text-text-muted whitespace-nowrap'>
             <span className='font-semibold'>Auto Refresh</span> -{" "}
@@ -58,7 +58,7 @@ export const PageHeader = ({
               )}
             </button>
             {isAlertOpen && weatherAlerts.length > 0 && (
-              <div className='absolute right-0 top-full mt-3 w-80 bg-main border-2 border-border-muted rounded-lg shadow-drop z-50'>
+              <div className='absolute left-0 right-auto top-full z-50 mt-3 w-[calc(100vw-2rem)] max-w-80 rounded-lg border-2 border-border-muted bg-main shadow-drop md:left-auto md:right-0'>
                 <div className='px-4 py-3 border-b border-border-muted'>
                   <h2 className='font-semibold text-text-muted'>
                     Weather Alerts
