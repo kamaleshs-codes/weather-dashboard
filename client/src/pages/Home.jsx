@@ -52,73 +52,88 @@ export const Home = ({ sidebarOpen }) => {
 
   return (
     <div className='min-h-full bg-main text-main'>
-      <section className='relative overflow-hidden px-8 py-12 lg:p-16'>
+      {/* Hero Section */}
+      <section className='relative overflow-hidden px-4 py-8 sm:px-6 sm:py-10 lg:p-16'>
         <div className='mx-auto flex w-full max-w-7xl flex-col gap-8'>
+          {/* Hero Content */}
           <div className='w-full'>
             <HeaderBadge
               icon={CloudIcon}
               header='YOUR PERSONAL WEATHER COMPANION'
             />
+
             <div
               id='hero-context'
-              className='relative mt-3 w-full overflow-hidden rounded-[2.5rem_1.5rem_3rem_1.5rem] bg-gradient-to-br from-hero-start via-hero-mid to-hero-end px-7 py-10 hover:shadow-subtle sm:px-10 sm:py-12 border border-border hover:border hover:border-border-muted transition-all duration-300 ease-in-out'>
+              className='relative mt-3 w-full overflow-hidden rounded-[2.5rem_1.5rem_3rem_1.5rem] border border-border bg-gradient-to-br from-hero-start via-hero-mid to-hero-end px-7 py-10 transition-all duration-300 ease-in-out hover:border hover:border-border-muted hover:shadow-subtle sm:px-10 sm:py-12'>
+              {/* Top-right glow */}
               <div
                 className='
-          pointer-events-none
-          absolute -right-16 -top-20
-          h-52 w-72
-          rounded-[50%_45%_55%_40%]
-          bg-hero-glow/20
-          blur-3xl
-        '
+                  pointer-events-none
+                  absolute -right-16 -top-20
+                  h-52 w-72
+                  rounded-[50%_45%_55%_40%]
+                  bg-hero-glow/20
+                  blur-3xl
+                '
               />
+
+              {/* Top-right white glow */}
               <div
                 className='
-          pointer-events-none
-          absolute -right-5 top-16
-          h-32 w-52
-          rounded-[60%_40%_50%_45%]
-          bg-white/20
-          blur-2xl
-        '
+                  pointer-events-none
+                  absolute -right-5 top-16
+                  h-32 w-52
+                  rounded-[60%_40%_50%_45%]
+                  bg-white/20
+                  blur-2xl
+                '
               />
-              <div className='pointer-events-none absolute inset-0 opacity-20 dark:opacity-10 [background-image:repeating-linear-gradient(115deg,transparent_0px,transparent_18px,var(--hero-glow)_19px,transparent_21px)]' />
+
+              {/* Diagonal background pattern */}
+              <div className='pointer-events-none absolute inset-0 opacity-20 [background-image:repeating-linear-gradient(115deg,transparent_0px,transparent_18px,var(--hero-glow)_19px,transparent_21px)] dark:opacity-10' />
+
+              {/* Bottom-left glow */}
               <div
                 className='
-          pointer-events-none
-          absolute -bottom-24 -left-20
-          h-56 w-56
-          rounded-full
-          bg-hero-glow/15
-          blur-3xl
-        '
+                  pointer-events-none
+                  absolute -bottom-24 -left-20
+                  h-56 w-56
+                  rounded-full
+                  bg-hero-glow/15
+                  blur-3xl
+                '
               />
+
+              {/* Hero Content */}
               <div className='relative z-10 w-full'>
                 <h1 className='text-4xl font-bold leading-tight text-accent-secondary sm:text-5xl lg:text-7xl'>
                   Weather,
                   <span className='text-text-heading'> Simplified.</span>
                 </h1>
-                <p className='mt-6 max-w-3xl text-base leading-7 text-secondary sm:text-lg lg:text-xl dark:text-text-muted'>
+
+                <p className='mt-6 max-w-3xl text-base leading-7 text-secondary dark:text-text-muted sm:text-lg lg:text-xl'>
                   Get real-time weather information, detailed forecasts,
                   air-quality data, and interactive weather maps — all in one
                   simple and responsive dashboard.
                 </p>
+
+                {/* Hero Buttons */}
                 <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
                   <Link
                     to='/dashboard'
                     className='
-              inline-flex items-center justify-center gap-2
-              rounded-lg
-              bg-secondary
-              px-5 py-3
-              font-semibold
-              text-main
-              shadow-subtle
-              transition
-              hover:scale-[1.02]
-              hover:bg-accent
-              hover:text-secondary
-            '>
+                      inline-flex items-center justify-center gap-2
+                      rounded-lg
+                      bg-secondary
+                      px-5 py-3
+                      font-semibold
+                      text-main
+                      shadow-subtle
+                      transition
+                      hover:scale-[1.02]
+                      hover:bg-accent
+                      hover:text-secondary
+                    '>
                     Explore Dashboard
                     <ArrowRight size={18} />
                   </Link>
@@ -126,22 +141,22 @@ export const Home = ({ sidebarOpen }) => {
                   <Link
                     to='/forecast'
                     className='
-              inline-flex items-center justify-center gap-2
-              rounded-lg
-              border border-secondary/30
-              bg-white/20
-              px-6 py-3
-              font-semibold
-              text-secondary
-              backdrop-blur-sm
-              transition
-              hover:border-accent
-              hover:bg-accent
-              hover:text-secondary
-              dark:border-text-main/30
-              dark:bg-black/10
-              dark:text-main
-            '>
+                      inline-flex items-center justify-center gap-2
+                      rounded-lg
+                      border border-secondary/30
+                      bg-white/20
+                      px-6 py-3
+                      font-semibold
+                      text-secondary
+                      backdrop-blur-sm
+                      transition
+                      hover:border-accent
+                      hover:bg-accent
+                      hover:text-secondary
+                      dark:border-text-main/30
+                      dark:bg-black/10
+                      dark:text-main
+                    '>
                     View Forecast
                   </Link>
                 </div>
@@ -152,8 +167,10 @@ export const Home = ({ sidebarOpen }) => {
             <div className='pointer-events-none absolute left-1/2 top-1/2 w-3/4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent opacity-15 blur-3xl' />
             <div
               className={`relative w-full ${
-                sidebarOpen ? "h-[34.5rem]" : "h-[41rem]"
-              } overflow-hidden rounded-3xl border border-border bg-primary p-4 transition-all duration-300 ease-in-out hover:border-border-muted hover:shadow-subtle`}>
+                sidebarOpen
+                  ? "sm:h-[16rem] md:h-[23rem] lg:h-[34.5rem]"
+                  : "sm:h-[18rem] md:h-[27rem] lg:h-[41rem]"
+              } overflow-hidden rounded-3xl border border-border bg-primary p-2 transition-all duration-300 ease-in-out hover:border-border-muted hover:shadow-subtle sm:p-3 lg:p-4`}>
               <div className='hero-image-track'>
                 <div className='hero-image-card'>
                   <img
@@ -184,13 +201,13 @@ export const Home = ({ sidebarOpen }) => {
 
       <FeatureSection />
 
-      <section className='px-8 py-16 lg:px-16'>
+      <section className='px-4 py-12 sm:px-6 sm:py-14 lg:px-16 lg:py-16'>
         <div className='mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center'>
           <div>
             <p className='text-md font-semibold uppercase tracking-wider text-text-heading'>
               Why Weatherly?
             </p>
-            <h2 className='mt-2 text-3xl font-bold sm:text-4xl text-accent-secondary'>
+            <h2 className='mt-2 text-3xl font-bold text-accent-secondary sm:text-4xl'>
               A simple way to stay informed about the weather.
             </h2>
             <p className='mt-5 leading-7 text-text-light-secondary'>
@@ -199,12 +216,11 @@ export const Home = ({ sidebarOpen }) => {
               to expect next.
             </p>
           </div>
-          <div className='grid gap-4 sm:grid-cols-3 lg:grid-cols-1'>
+          <div className='grid gap-4 md:grid-cols-3 lg:grid-cols-1'>
             {projectHighlights.map((item, index) => (
               <FloatingCard key={item.title} delay={index * 0.3}>
                 <div className='rounded-xl border border-border-muted bg-secondary p-5 transition duration-300 ease-in-out hover:shadow-subtle'>
                   <h3 className='font-semibold text-accent'>{item.title}</h3>
-
                   <p className='mt-2 text-sm text-text-light'>
                     {item.description}
                   </p>
@@ -215,7 +231,7 @@ export const Home = ({ sidebarOpen }) => {
         </div>
       </section>
 
-      <section className='border-y border-border bg-secondary px-8 py-16 lg:px-16'>
+      <section className='border-y border-border bg-secondary px-4 py-12 sm:px-6 sm:py-14 lg:px-16 lg:py-16'>
         <div className='mx-auto max-w-7xl text-center'>
           <p className='text-sm font-semibold uppercase tracking-wider text-text-title'>
             Explore Weatherly
@@ -228,7 +244,7 @@ export const Home = ({ sidebarOpen }) => {
               <Link
                 key={item.title}
                 to={item.link}
-                className='group block rounded-xl border border-border-muted bg-primary p-6 text-left hover:shadow-drop transition duration-300 ease-in-out hover:border-border-muted'>
+                className='group block rounded-xl border border-border-muted bg-primary p-6 text-left transition duration-300 ease-in-out hover:border-border-muted hover:shadow-drop'>
                 <h3 className='mt-5 text-xl font-semibold text-text-heading'>
                   {item.title}
                 </h3>
@@ -248,7 +264,7 @@ export const Home = ({ sidebarOpen }) => {
         </div>
       </section>
 
-      <footer className='bg-main px-8 py-10 lg:px-16'>
+      <footer className='bg-main px-4 py-8 sm:px-6 sm:py-10 lg:px-16'>
         <div className='mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between'>
           <div>
             <h2 className='text-xl font-bold text-accent-secondary'>

@@ -5,7 +5,7 @@ const MainContent = ({ location, setLocation, sidebarOpen }) => {
   return (
     <main
       className={`min-w-0 bg-main text-text-muted transition-all duration-300 ease-in-out ${
-        sidebarOpen ? "ml-[14.2857%]" : "ml-0"
+        sidebarOpen ? "lg:ml-[14.2857%]" : "ml-0"
       }`}>
       <AppRoutes
         location={location}
