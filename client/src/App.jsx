@@ -1,11 +1,13 @@
+import { Routes, Route } from "react-router-dom";
 import AppLayout from "./Layouts/AppLayout";
-import { useState } from "react";
+import { Login } from "./pages/Login";
 
 function App() {
   return (
-    <>
-      <AppLayout />
-    </>
+    <Routes>
+      <Route path='/login' element={<Login />} />
+      <Route path='*' element={<AppLayout />} />
+    </Routes>
   );
 }
 

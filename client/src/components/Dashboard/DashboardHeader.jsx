@@ -3,6 +3,7 @@ import DashboardSearch from "./DashboardSearch";
 import { PageHeader } from "../Layout/PageHeader";
 import { useRefresh } from "../../context/RefreshContext";
 import { LuLogIn } from "react-icons/lu";
+import { NavLink } from "react-router-dom";
 
 const DashboardHeader = ({ onSearch, weatherAlerts }) => {
   const { refreshStatus } = useRefresh();
@@ -18,10 +19,12 @@ const DashboardHeader = ({ onSearch, weatherAlerts }) => {
           <DashboardSearch onSearch={onSearch} />
         </PageHeader>
       </div>
-      <div className='flex w-full cursor-pointer items-center justify-center gap-2 border-b-2 border-border-muted bg-secondary p-3 text-primary hover:bg-accent hover:text-secondary md:w-30 md:border-l-2'>
+      <NavLink
+        to='/login'
+        className='flex w-full items-center justify-center gap-2 border-b-2 border-border-muted bg-secondary p-3 text-primary transition-colors hover:bg-accent hover:text-secondary md:w-30 md:border-l-2'>
         <p className='font-semibold'>Login</p>
         <LuLogIn className='text-xl' />
-      </div>
+      </NavLink>
     </div>
   );
 };

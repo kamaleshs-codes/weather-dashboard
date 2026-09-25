@@ -25,7 +25,7 @@ export const Settings = () => {
           </div>
         )}
         <DefaultLocation />
-        <div className='rounded-xl border border-border-muted bg-main px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
+        <div className='rounded-xl border border-border-muted bg-surface px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
           <div className='mb-4'>
             <h3 className='text-xl font-semibold'>General Settings</h3>
             <p className='mt-1 text-sm font-semibold text-accent-secondary'>
@@ -69,7 +69,7 @@ export const Settings = () => {
             </div>
           </div>
         </div>
-        <div className='mt-6 rounded-xl border border-border-muted bg-main px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
+        <div className='mt-6 rounded-xl border border-border-muted bg-surface px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
           <div className='mb-4'>
             <h3 className='text-xl font-semibold'>Map Settings</h3>
             <p className='mt-1 text-sm font-semibold text-accent-secondary'>
@@ -99,7 +99,7 @@ export const Settings = () => {
             </div>
           </div>
         </div>
-        <div className='mt-6 rounded-xl border border-border-muted bg-main px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
+        <div className='mt-6 rounded-xl border border-border-muted bg-surface px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
           <div className='mb-4'>
             <h3 className='text-xl font-semibold'>Appearance Settings</h3>
             <p className='mt-1 text-sm font-semibold text-accent-secondary'>
@@ -124,7 +124,7 @@ export const Settings = () => {
             </div>
           </div>
         </div>
-        <div className='mt-6 rounded-xl border border-border-muted bg-main px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
+        <div className='mt-6 rounded-xl border border-border-muted bg-surface px-4 py-5 sm:px-6 sm:py-6 lg:px-8'>
           <div className='mb-4'>
             <h3 className='text-xl font-semibold'>Notification Settings</h3>
             <p className='mt-1 text-sm font-semibold text-accent-secondary'>

@@ -252,7 +252,7 @@ export const Home = ({ sidebarOpen }) => {
       <footer className='bg-main px-4 py-8 sm:px-6 sm:py-10 lg:px-16'>
         <div className='mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between'>
           <div className='flex-col justify-items-center'>
-            <Weatherly />
+            <Weatherly className="w-90 h-60"/>
             <p className='mt-1 text-sm text-text-light-secondary'>
               Your simple weather companion.
             </p>

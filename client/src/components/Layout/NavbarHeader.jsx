@@ -18,7 +18,7 @@ const NavbarHeader = ({ sidebarOpen, toggleSidebar }) => {
           </button>
           <h3 className='hidden sm:block'>Menu</h3>
         </div>
-        <Weatherly />
+        <Weatherly className="w-60 h-35"/>
       </div>
       <nav className='hidden md:block'>
         <ul className='flex gap-8'>
