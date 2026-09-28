@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { headerNavLinks } from "../../data/navigation";
 import weatherlyIcon from "../../assets/app_icon/weatherlyIcon.png";
-import { Weatherly } from "../common/weatherly";
+import { Weatherly } from "../common/Weatherly";
 
 const NavbarHeader = ({ sidebarOpen, toggleSidebar }) => {
   return (

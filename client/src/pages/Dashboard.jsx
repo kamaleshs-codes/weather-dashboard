@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getWeather } from "../services/weatherapi";
+import { getWeather } from "../services/weatherApi";
 import { WeatherCard } from "../components/Dashboard/WeatherCard";
 import { WeatherDetailsCard } from "../components/Dashboard/WeatherDetailsCard";
 import { getLocalDateTime } from "../utils/DateTimeFormat";
